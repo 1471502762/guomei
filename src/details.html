@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" type="text/css" href="css/foot.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/rest.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--gome_topad-->
+    <div class="gome-top">
+        <div id="gome-top-body" class="wbox">
+            <ul>
+                <li id="gome-entry-link">
+                    <a data-code="public01001" href="//www.gome.com.cn/" target="_blank">
+                        <i class="icon-gome-logo"></i>国美首页</a>
+                </li>
+                <li class="gome-spacer"></li>
+                <li id="gome-user" data-load="user">
+                    <b id="loginDiv-name">
+                        <a data-code="public01053" href="//club.gome.com.cn" rel="nofollow" target="_blank">国美会员</a>
+                        <i></i>
+                    </b>
+                    <div class="public-dropdown"></div>
+                </li>
+                <li id="loginDiv-link" class="gome-link">
+                    <a rel="nofollow" data-code="public01002" href="login.html">登录</a>
+                    <a class="gome-link-register" rel="nofollow" data-code="public01003" href="registor.html">注册有礼
+                        <i></i>
+                    </a>
+                </li>
+            </ul>
+            <ul id="gome-top-right">
+                <li class="gome-link">
+                    <a rel="nofollow" data-code="public01004" href="//myhome.gome.com.cn/member/myOrder">我的订单</a>
+                </li>
+                <li id="gome-mygome" data-load="mygome">
+                    <b>
+                        <a rel="nofollow" data-code="public01050" href="//myhome.gome.com.cn/member/profileHome" target="_blank">我的国美</a>
+                        <i></i>
+                    </b>
+                    <div class="public-dropdown"></div>
+                </li>
+                <li class="gome-spacer"></li>
+                <li id="gome-enterprise" class="drop">
+                    <b>
+                        <a rel="nofollow" data-code="public01055" href="//b.gome.com.cn/" target="_blank">企业采购</a>
+                        <i></i>
+                    </b>
+                    <div class="public-dropdown">
+                        <a class="gome-qrcode" data-code="public01005" href="//b.gome.com.cn/" target="_blank"></a>
+                    </div>
+                </li>
+                <li id="gome-service" class="drop" data-load="service">
+                    <b>
+                        <em class="gm-icon">&#x0066;</em>
+                        <a data-code="public01052" rel="nofollow" href="//help.gome.com.cn/" target="_blank">服务中心</a>
+                        <i></i>
+                    </b>
+                    <div class="public-dropdown"></div>
+                </li>
+                <li id="gome-sitemap" class="drop" data-type="a05" data-load="sitemap">
+                    <b>
+                        <a rel="nofollow" data-code="public01060" href="//sitemap.gome.com.cn/" target="_blank">网站导航</a>
+                        <i></i>
+                    </b>
+                    <div class="public-dropdown"></div>
+                </li>
+                <li class="gome-spacer"></li>
+                <li id="gome-phone" class="drop">
+                    <b>
+                        <em class="gm-icon">&#x00E1;</em>
+                        <a data-code="public01049" rel="nofollow" href="//shouji.gome.com.cn/" target="_blank">手机国美</a>
+                        <i></i>
+                    </b>
+                    <div class="public-dropdown">
+                        <a class="gome-qrcode" data-code="public01005" href="//shouji.gome.com.cn/" target="_blank"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div id="gome-head" class="wbox" data-need-slogan-judge="true">
+        <div id="logo">
+            <a data-code="public03001" href="//www.gome.com.cn/">国美</a>
+        </div>
+        <div id="logo-gif"></div>
+
+
+        <div id="topSearch" class="topsearch" style="left: 330px;">
+            <div id="topSearchHover" class="searchbox" data-visitor="hover" style="height: 30px; float: left; border: 2px solid rgb(227, 16, 30);">
+                <form id="searchForm" method="get" action="//search.gome.com.cn/search" onsubmit="return doSearch();">
+                    <div id="search-type-dropdown">
+                        <div class="search-type">
+                            <span class="search-type-selected" data-selected="goods">商品</span>
+                            <i></i>
+                        </div>
+                        <ul class="search-type-list" style="display: none;">
+                            <li class="search-type-item" data-selector="goods">商品</li>
+                            <li class="search-type-item" data-selector="shop">店铺</li>
+                            <li class="search-type-item" data-selector="topic">话题</li>
+                            <li class="search-type-item" data-selector="group">圈子</li>
+                        </ul>
+                    </div>
+                    <label id="keyLabel" default="洗衣机,1;空调,1;冰箱,1;手机,1;热水器,1" style="text-align: left; width: 73%;">洗衣机</label>
+                    <input type="text" id="searchInput" name="question" value="" autocomplete="off" onpropertychange="if(this.value.length>200){this.value=this.value.slice(0,199)}"
+                        alt="" style="width: 300px;">
+                    <button type="button" class="search-btn" onclick="doSearch();" style="width: 91px; text-indent: 0px; font-weight: 600;">搜全站</button>
+                </form>
+                <a href="//js.gomein.net.cn/search/voice/search.html" target="_blank">
+                    <div class="voice-search" style="margin-top: -30px; margin-right: 100px;"></div>
+                </a>
+                <button style="position:absolute;top:-2px;right:-91px;width:88px;cursor:pointer;font:600 16px/30px Mircosoft YaHei;height:34px;border: 2px solid #5a5a5a;background-color: #5a5a5a;color: #fff;"
+                    onclick="searchResult();">搜本店</button>
+            </div>
+            <div class="hotkeyword" style="width: 503px; line-height: 20px; height: 20px;">
+                <a target="_blank" href="http://prom.gome.com.cn/html/prodhtml/topics/201410/11fsxb.html" title="11元秒杀等你抢">
+                    <span class="highlight">11元秒杀等你抢</span>
+                </a>
+                <a target="_blank" href="//search.gome.com.cn/search?question=%E7%BA%A2%E8%9C%BB%E8%9C%93&amp;catId=cat21445577"
+                    title="红蜻蜓">
+                    <span>红蜻蜓</span>
+                </a>
+                <a target="_blank" href="//search.gome.com.cn/search?question=%E4%BF%9D%E7%BD%97%E7%9B%96%E5%B8%9D&amp;catId=cat21445577"
+                    title="保罗盖帝">
+                    <span>保罗盖帝</span>
+                </a>
+                <a target="_blank" href="//search.gome.com.cn/search?question=%E9%87%91%E7%8C%B4%E6%8B%89%E6%9D%86&amp;catId=cat21445577"
+                    title="金猴拉杆">
+                    <span>金猴拉杆</span>
+                </a>
+                <a target="_blank" href="//search.gome.com.cn/search?question=%E8%8C%B6%E8%8A%B1&amp;catId=cat21445577" title="茶花">
+                    <span>茶花</span>
+                </a>
+                <a target="_blank" href="//search.gome.com.cn/search?question=%E7%9A%AE%E5%B0%94%E5%8D%A1%E4%B8%B9&amp;catId=cat21445577"
+                    title="皮尔卡丹">
+                    <span>皮尔卡丹</span>
+                </a>
+            </div>
+            <div id="searchTips" class="searchtips" style="display: none;">
+
+                <ul id="searchTipsList" class="searchabout clearfix">
+                    <li class="related-search related-shop-search">
+                        <a href="javascript:void(0);">
+                            <i></i>
+                            <span>找“</span>
+                            <em class="related-keyword"></em>
+                            <span>”相关店铺</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="closeSearch" id="closeSearch">
+                    <span>关闭</span>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var environment = 'commerce', targetType = 'Production', contentLabels = 'Catalog', language = 'chinese';
+            </script>
+        </div>
+
+
+        <div class="mygome-side" data-cart="mincart">
+            <ul class="topmenu clearfix">
+                <li class="shopcartbox">
+                    <span class="cartlinkbox">
+                        <a data-code="public03004" rel="nofollow" class="menulink cartlink" href="//g.gome.com.cn/ec/homeus/cart/cart.jsp">
+                            <em class="i-cart">
+                                <span class="shopnum">
+                                    <span id="commerceItemQuantityId">0</span>
+                                    <i></i>
+                                </span>
+                            </em>
+                            <span id="hdrcarttext">购物车空了</span>
+                            <b></b>
+                        </a>
+                    </span>
+                    <div class="menuhide j-overflowy" id="miniShoppingcartLoadId">
+                        <div id="csLoading" class="loding-layer">
+                            <span class="g-loading"></span>
+                            <span class="loading-text">正在加载中…</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--gome_head -->
+
+
+
+    <!--head-->
+
+    <div style='width:100%;' class='marginauto'>
+        <div>
+            <div class='container-dz dz-color' style='background-image:url(https://gfs.gomein.net.cn/T1e7AvBvKb1RCvBVdK)' id='dianzhao'>
+                <div class='wrap990' style='height:100px'>
+                    <div class='shop-log' Style='padding-top:10px'></div>
+                    <div class='shop-text' style='line-height:100px'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="breadcrumbs-wrapper">
+        <div class="breadcrumbs-container">
+            <div class="left">
+                <ul>
+                    <li style='display:none;'>
+                        <a href="//www.gome.com.cn/" title="首页">首页</a>
+                    </li>
+                    <li class='linkBold'>
+                        <a href="//clothing.gome.com.cn/" title="服饰鞋帽">服饰鞋帽</a>
+                        <i class="icon-crumbs-right"></i>
+                    </li>
+                    <li>
+                        <a title="服饰配件">服饰配件</a>
+                        <i class="icon-crumbs-right"></i>
+                    </li>
+                    <li>
+                        <a href="//list.gome.com.cn/cat21445577.html" title="其他服饰配件">其他服饰配件</a>
+                        <i class="icon-crumbs-right"></i>
+                    </li>
+                    <li>
+                        <a href="//search.gome.com.cn/search?question=%E9%9C%93%E7%BE%8E%E8%88%92%28Nimeishu%29" title="霓美舒(Nimeishu)">霓美舒(Nimeishu)</a>
+                        <i class="icon-crumbs-right"></i>
+                    </li>
+                    <li class='active'>
+                        <a href="//item.gome.com.cn/A0006529651-pop8012541258.html" title="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)">【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="ly-stores shops-name">
+                    <a href="javascript:;" class="btn-collect " id="collect_shop">
+                        <i class="icon-collect"></i>
+                        <span>收藏店铺</span>
+                        <i class="icon-arrow"></i>
+                    </a>
+                    <a href="javascript:;" style="display: block" class="btn-service hide" customer-service-button-id="80014497">
+                        <i></i>在线客服</a>
+                    <span class="services-score">
+                        <b class="star-gray">
+                            <i class="star-red" style="width:95.1886%"></i>
+                        </b>
+                        <em class="score">4.7</em>分</span>
+                    <a class="name" title="霓美舒旗舰店" href="//mall.gome.com.cn/80014497/" target="_blank">霓美舒旗舰店</a>
+                    <div class="pop-stores-others">
+                        <div class="services-wrapper">
+                            <div class="services-stars">
+                                服务评分：
+                                <span class="star">
+                                    <i style="width:95.1886%">星星</i>
+                                </span>
+                                <span class="score">4.7</span>分
+                            </div>
+                            <div class="services-score-detail">
+                                <p>
+                                    <span class="detail">评分明细</span>
+                                    <span class="contrast">与行业对比</span>
+                                </p>
+                                <div class="describe ">
+                                    <p>商品描述：
+                                        <span>4.64</span>
+                                        <small title="计算规则：（商家得分-同行业平均分）/（同行业商家最高得分-同行业平均分）" class="gaoyu_text">68.28%</small>
+                                        <i class="gaoyu">箭头</i>
+                                    </p>
+                                </div>
+                                <div class="logistics">
+                                    <p>发货速度：
+                                        <span>4.64</span>
+                                        <small title="计算规则：（商家得分-同行业平均分）/（同行业商家最高得分-同行业平均分）" class="gaoyu_text">99.99%</small>
+                                        <i class="gaoyu">箭头</i>
+                                    </p>
+                                </div>
+                                <div class="services">
+                                    <p>服务质量：
+                                        <span>5.00</span>
+                                        <small title="计算规则：（商家得分-同行业平均分）/（同行业商家最高得分-同行业平均分）" class="gaoyu_text">100.00%</small>
+                                        <i class="gaoyu">箭头</i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-wrapper" id="store_live800_wrap">
+                            <span class="txt-phone">
+                                <i></i>15975214244</span>
+                        </div>
+                        <div class="company-wrapper">
+                            <p>公司名称：深圳市雅美怡服饰贸易有限公司
+                                <a href="//mall.gome.com.cn/storelisence/80014497.html" target="_blank">
+                                    <img gome-src="//app.gomein.net.cn/coo8images/coo8/shop/ic.jpg" width="19" height="20" alt="icon">
+                                </a>
+                            </p>
+                            <p>所在地：&nbsp;&nbsp;深圳市</p>
+                            <input id="province_name" type="hidden" value="" />
+                            <input id="city_name" type="hidden" value="深圳市" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="gome-container" id="gm-main-info">
+        <div class="prd-firstscreen-left">
+            <div class="magnifier ">
+                <div class="pic-big">
+                    <div class="jqzoom">
+                        <img width="360" height="360" class="j-bpic-b" jqimg="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_800_pc.jpg" gome-src="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_360.jpg"
+                            alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)">
+                        <a title="点击看【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)大图" target="_blank" href="//item.gome.com.cn/bigimage/A0006529651-pop8012541258.html"
+                            class="pic-l-b"></a>
+                    </div>
+                </div>
+                <div class="pic-list j-listroll">
+                    <div class="pic-btn">
+                        <a href="javascript:;" class="pic-btn-l">
+                            <b class="j-gRbtnU">
+                                <s></s>
+                            </b>
+                        </a>
+                        <a href="javascript:;" class="pic-btn-r">
+                            <em class="j-gRbtnD">
+                                <i></i>
+                            </em>
+                        </a>
+                    </div>
+                    <div class="pic-small j-gRbox j-pichover clearfix">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    <img width="50" height="50" rpic="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_800_pc.jpg" bpic="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_360.jpg"
+                                        gome-src="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_50.jpg" alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)"
+                                        title="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img width="50" height="50" rpic="//gfs2.gomein.net.cn/T1VP_bBKEv1RCvBVdK_800_pc.jpg" bpic="//gfs2.gomein.net.cn/T1VP_bBKEv1RCvBVdK_360.jpg"
+                                        gome-src="//gfs2.gomein.net.cn/T1VP_bBKEv1RCvBVdK_50.jpg" alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第2张高清大图"
+                                        title="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第2张高清大图">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img width="50" height="50" rpic="//gfs3.gomein.net.cn/T13nZgBgYv1RCvBVdK_800_pc.jpg" bpic="//gfs3.gomein.net.cn/T13nZgBgYv1RCvBVdK_360.jpg"
+                                        gome-src="//gfs3.gomein.net.cn/T13nZgBgYv1RCvBVdK_50.jpg" alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第3张高清大图"
+                                        title="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第3张高清大图">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img width="50" height="50" rpic="//gfs2.gomein.net.cn/T1AU_sBjAT1RCvBVdK_800_pc.jpg" bpic="//gfs2.gomein.net.cn/T1AU_sBjAT1RCvBVdK_360.jpg"
+                                        gome-src="//gfs2.gomein.net.cn/T1AU_sBjAT1RCvBVdK_50.jpg" alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第4张高清大图"
+                                        title="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第4张高清大图">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img width="50" height="50" rpic="//gfs.gomein.net.cn/T12f_jBb_v1RCvBVdK_800_pc.jpg" bpic="//gfs.gomein.net.cn/T12f_jBb_v1RCvBVdK_360.jpg"
+                                        gome-src="//gfs.gomein.net.cn/T12f_jBb_v1RCvBVdK_50.jpg" alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第5张高清大图"
+                                        title="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)第5张高清大图">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar ">
+                <span class="product-number" title="8012541258">商品编号：8012541258</span>
+                <a class="collect" id="collect" href="javascript:;">
+                    <i></i>收藏</a>
+                <a class="showWish" id='showWish' href="javascript:;">
+                    <i></i>提心愿</a>
+                <a class="shareGold" href="javascript:;" share_page="02" share_id="A0006529651" share_typeid="02">
+                    <i></i>分享</a>
+
+            </div>
+            <div id="imgloads" style="display:none"></div>
+            <input type="hidden" id="defaultfirst" value="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK" />
+        </div>
+        <div class="prd-firstscreen-center " id="gm-prd-main">
+            <div class="hgroup">
+                <h1>【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)</h1>
+                <h4 id="prdtitcx" ly></h4>
+                <div class="contrasts-wrapper shareDB" cid="A0006529651/pop8012541258">
+                    <label class="btn-contrasts">对比</label>
+                </div>
+            </div>
+            <div class="prd-atmosphere-wrapper">
+                <div class="pa-figure">
+                </div>
+                <div class="pa-right">
+                    <div class="count-down"></div>
+                    <span class="endtime-tip"></span>
+                </div>
+            </div>
+            <div class="yushou-entrance hide">
+                <div class="yushou-entrance_left">
+                    <span class="label">预售中</span>
+                    <span class="deposittip">定金</span>
+                    <span class="deposit hide">
+                        <em data-before="￥" class="txt"></em>
+                    </span>
+                    <span class="presale-price hide">预售价￥
+                        <em class="txt"></em>
+                    </span>
+                    <div class="countdown hide" data-before="距离结束还有"></div>
+                </div>
+                <div class="yushou-entrance_right">
+                    <a href="javascript:;" target="_blank" class="goToYushou">></a>
+                </div>
+            </div>
+            <div class="prd-price-1">
+                <div class="prd-price-other line33 p20  clearfix">
+                    <label class="prd-price-left">国&nbsp;&nbsp;美&nbsp;&nbsp;价</label>
+                    <div class="unitprice prd-price-right">
+                        <span id="prdPrice" class="price">渲染价格</span>
+                        <a href="javascript:;" id="reduce" class="reduce">降价通知</a>
+                    </div>
+                    <div class="prd-price-flr">
+                        <div class="prd-price-line">|</div>
+                        <div class="prd-price-lineright">
+                            <p>好评度
+                                <em id="haocnt">100%</em>
+                            </p>
+                            <p class="pincnt">
+                                <a href="javascript:;" class="reduce" id="goappr">
+                                    <em id="pincnt">0</em>人评价</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="prd-price-other lanjuan-top clearfix dn">
+                    <label class="prd-price-left">领&#x3000;&#x3000;劵</label>
+                    <div class="prd-price-right lanjuan" id="lanjuan"></div>
+                </div>
+                <div class="prd-price-other prd-cuxiao-other clearfix dn">
+                    <div class="cuxiaobox">
+                        <label class="prd-price-left cuxiao">促&#x3000;&#x3000;销</label>
+                        <div class="prd-price-right prd-promotions "></div>
+                    </div>
+                </div>
+            </div>
+            <div class="yuyuejia yuyue_price_info hide">
+                <span class="prdLeft">预约价</span>
+                <strong id="promoPrice"></strong>
+                <label id="priceLable">预约中</label>
+            </div>
+            <div class="prd-properties" id="prd-properties_min">
+                <div class="prd-properties-1">
+                    <div class="prd-properties-other m20 tese">
+                        <label class="prd-properties-left line20">特&#x3000;&#x3000;色</label>
+                        <div class="prd-properties-right">
+                            <span class="yijiuhuanxin dn">
+                                <em></em>
+                                <b></b>
+                                <a href="javascript:;" target="_blank"></a>
+                            </span>
+                            <span class="baina dn">
+                                <em></em>
+                                <b></b>
+                                <a href="javascript:;" target="_blank"></a>
+                            </span>
+                            <span class="guanjia">
+                                <em></em>
+                                <b></b>
+                                <a href="//mall.gome.com.cn/80011410/" target="_blank">管家服务</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="prd-properties-other songzhi m8">
+                        <label class="prd-properties-left">送&#x3000;&#x3000;至</label>
+                        <div class="prd-properties-right" style="position:relative">
+                            <div class="prd-properties-city">
+                                <div class="prd-properties-citys clearfix">
+                                    <div class="address-wrapper" id="address">
+                                        <a href="javascript:;" class="region" id="stockaddress">渲染地点</a>
+                                    </div>
+                                    <div class="gCity gCity-wrapper clearfix"></div>
+                                </div>
+                            </div>
+                            <span class="hasstock" id="stockTxt">有货</span>
+                            <span class="zhichi dn" style="display: block">渲染支持
+                                <a href="javascript:;">渲染免运费</a>
+                            </span>
+                            <div id="show_xiangqing" class="pop-freightnote hide"></div>
+                        </div>
+                    </div>
+                    <div class="prd-properties-other m12 dn">
+                        <label class="prd-properties-left tesu"></label>
+                        <div class="prd-properties-right fumai"></div>
+                    </div>
+                    <div class="prd-properties-other m12 dn">
+                        <label class="prd-properties-left tesu"></label>
+                        <div class="prd-properties-right arrival"></div>
+                    </div>
+                    <div class="prd-properties-other fuwu m16">
+                        <label class="prd-properties-left">服&#x3000;&#x3000;务</label>
+                        <div class="prd-properties-right">
+                            <span id="service_bable">
+                                由
+                                <a href="//mall.gome.com.cn/80014497/" target="_blank">霓美舒旗舰店</a>
+                                <span id="shipingAddr"></span>发货并负责售后服务。
+                            </span>
+                        </div>
+                    </div>
+                    <div class="prd-properties-other factory-installation dn">
+                        <label class="prd-properties-left">厂家安装</label>
+                        <div class="prd-properties-right">
+                            <span class="factory-phone"></span>
+                            <div class="more dn">
+                                <a href="javascript:void(0);">帮助提示</a>
+                                <div class="tips">
+                                    <div class="sanjiao"></div>
+                                    <div class="tip-body">
+                                        <p class="factory-infos"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prd-properties-2">
+                    <div id="salesProperty" class="m20">
+                        <div class="prd-properties-other  yanse" id='booleanMainsale' data-type="颜色" data-idx="0">
+                            <label class="prdLeft">颜色</label>
+                            <div class="prdRight">
+                                <div class="prdcol prd-img-item">
+                                    <a href="//item.gome.com.cn/A0006529651-pop8012541258.html" class="select" title="橡胶杆中性笔0.38mm#2支装" vals="橡胶杆中性笔0.38mm#2支装"
+                                        data-alt="橡胶杆中性笔038mm2支装" saleId='a0caf692b46f'>
+                                        <img src="//app.gomein.net.cn/images/grey.gif" gome-src="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_60.jpg" alt="橡胶杆中性笔0.38mm#2支装"
+                                        />
+                                        <span>橡胶杆中性笔0.38mm#2支装</span>
+                                        <i></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prd-properties-other added-service banben  hide">
+                        <label class="prdLeft">延保服务</label>
+                        <div class="prdRight addedService" id="addedService">
+                            <div class='more'>
+                                <a href='javascript:void(0);'>帮助提示</a>
+                                <div class='hide tips'>
+                                    <div class='sanjiao'></div>
+                                    <div class='tip-body'>
+                                        <p>凡是在国美购买的家安保服务，在保障期间内遇到无论是正常使用中的问题还是意外事故，即可享受家安保服务。国美家安保内容包括：延长保修、只换不修、屏碎保护、意外保护、服务保障。覆盖家电、手机数码、电脑办公等商品。</p>
+                                        <p class='shengming'>家安保服务，只能提供增值税普通电子发票，如有疑问，请与在线客服
+                                            <span class='live800-service normal dn' customer-service-button-id="80014497"
+                                                customer-entry="product" skuId="pop8012541258" productId="A0006529651" categoryid="cat18596268_cat15985598_cat21445577"
+                                                brandId="300007422">在线客服</span>联系</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prd-properties-other yuyuejieshu hide" id="yuyue_daojishi">
+                        <label class="prdLeft"></label>
+                        <div class="prdRight">
+                            <em class="d">00</em>
+                            <span>天</span>
+                            <em class="h">09</em>
+                            <span>时</span>
+                            <em class="m">11</em>
+                            <span>分</span>
+                            <em class="s">30</em>
+                            <span>秒</span>
+                            <div id="yushouCount" class="total">
+                                <span>已有</span>
+                                <strong>0</strong>
+                                <span>人成功预约</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--套装商品不支持美易分-->
+                    <div class="prd-properties-other meiyifen dn">
+                    </div>
+                </div>
+            </div>
+            <div class="prd-buttons" id="btnLink">
+                <div class="count-wrapper" id="btnCount">
+                    <input type="text" class="quantity j-gACval" id="enterQty" maxlength="5" value="1" onfocus="this.className='j-gACval quantity focus'"
+                        onblur="this.className='quantity j-gACval'" autocomplete="off">
+                    <a href="javascript:;" class="plus j-gACbtnA">+</a>
+                    <a href="javascript:;" class="minus j-gACbtn">-</a>
+                </div>
+                <div class="remainbox dn"></div>
+                <a href="javascript:;" id="yuyue" class="btn-product btn-appointment hide">立即预约</a>
+                <a href="javascript:;" id="qianggou" class="btn-product btn-purchase hide">立即抢购</a>
+                <a href="javascript:;" target="_blank" class="btn-product btn-yushou hide">预售</a>
+                <a href="javascript:;" class="btn-product btn-addcart" id="addCart">加入购物车</a>
+                <a href="javascript:;" class="btn-product btn-stages dn" id="pay_fenQi">分期购</a>
+                <a href="javascript:;" class="btn-product btn-meiyifen dn">国美易卡</a>
+                <a href="javascript:;" id="easyShopping" class="btn-product btn-easeshopping dn" data_easy="1">快速购</a>
+                <a href="javascript:;" id="mobtn" class="btn-product mobtn">
+                    <i class="mobtnma"></i>手机下单
+                    <div>
+                        <img _src="//ss.gome.com.cn/item/v1/qr/verify/A0006529651/pop8012541258/flag/item" alt="二维码">
+                    </div>
+                </a>
+                <a href="javascript:;" class="btn-product btn-hasstock dn" id="arrival">到货通知</a>
+                <a href="javascript:;" class="btn-product btn-off-loading hide">商品下架</a>
+                <div class="easyShopping_box pop-easeshopping hide">
+                    <div class="ETooltips-arr"></div>
+                </div>
+                <!--参加节能补贴提示说明 start-->
+                <div class="pop-energy-saving hide"></div>
+                <!--参加节能补贴提示说明 end-->
+                <div id="yuye_more" class="appointment-wrapper hide">
+                    <a href="javascript:;">
+                        <i></i>了解预约抢购</a>
+                    <div id="yuye_more_msg" class="hide appointment-tips">
+                        <i class="btn-arrow-left"></i>
+                        <p>预约抢购规则</p>
+                        <p>1、欢迎预约购买，请在正式开售之后下单付款；</p>
+                        <p>2、商品开售后，仅有已预约的用户可购买商品；</p>
+                        <p>3、每人限购一件，先到先得。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prd-tips wenxintishi_wrap clearfix">
+                <p>温馨提示</p>
+                <ol class="wenxinti">
+                    <li>
+                        正品保障； 支持7天无理由退货
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="prd-firstscreen-right">
+            <!--大数据推荐 看了又看 start-->
+            <div class="bigdata-reskim">
+                <h2>看了又看</h2>
+                <div class="reskim-carousel" id="reskim-carousel">
+                    <div class="carousel" style="width: 160px; height: 520px; position: relative; overflow: hidden;">
+                        <ul style="height: 520px;">
+                            <li style="top: 0px; left: 0px;">
+                                <a href="//item.gome.com.cn/A0006406834-pop8011159542.html?intcmp=box74-0-1_1_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="//gfs17.gomein.net.cn/T1C8ZbBj_T1RCvBVdK_160.jpg"
+                                        alt="霓美舒  两件套韩版纯色宽松性感家居仿真丝吊带睡衣女夏季背心短裤套装薄款(JC 928# 吊带仿真丝（深紫） XXL码)" src="//gfs17.gomein.net.cn/T1C8ZbBj_T1RCvBVdK_160.jpg"> </a>
+                                <p>
+                                    <span>¥19.90</span>
+                                </p>
+                            </li>
+                            <li style="top: 180px; left: 0px;">
+                                <a href="//item.gome.com.cn/A0006445608-pop8011644592.html?intcmp=box74-0-1_2_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="https://gfs17.gomein.net.cn/T1FeDQBQ_T1RCvBVdK_160.jpg"
+                                        alt="霓美舒 春夏季长袖睡衣女七件套家居服秋冬纯棉吊带7大码性感睡袍套装(HS 5225#树叶纯棉七件套 XL（适合118-140斤）)" src="//gfs17.gomein.net.cn/T17fCvBCWT1RCvBVdK_160.jpg"> </a>
+                                <p>
+                                    <span>¥159.00</span>
+                                </p>
+                            </li>
+                            <li style="top: 360px; left: 0px;">
+                                <a href="//item.gome.com.cn/A0006445623-pop8011644763.html?intcmp=box74-0-1_3_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="https://gfs17.gomein.net.cn/T1I2K_ByLv1RCvBVdK_160.jpg"
+                                        alt="霓美舒 春秋睡衣女纯棉长袖开衫韩版卡通全棉宽松家居服女士可外穿套装(HS 204#史努比送眼罩 XXL码)" src="//gfs17.gomein.net.cn/T1xSZbB4dT1RCvBVdK_160.jpg"> </a>
+                                <p>
+                                    <span>¥79.00</span>
+                                </p>
+                            </li>
+                            <li style="top: 0px; left: 180px;">
+                                <a href="//item.gome.com.cn/A0006445638-pop8011644937.html?intcmp=box74-0-1_4_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="https://gfs17.gomein.net.cn/T1AqYvBbWT1RCvBVdK_160.jpg"
+                                        alt="霓美舒 春秋季情侣睡衣空调服长袖仿真丝开衫韩版冰丝睡衣女男家居服套装(HS 8106#情侣仿真丝（橘色） 女款XL)"> </a>
+                                <p>
+                                    <span>¥59.90</span>
+                                </p>
+                            </li>
+                            <li style="top: 180px; left: 180px;">
+                                <a href="//item.gome.com.cn/A0006446365-pop8011650110.html?intcmp=box74-0-1_5_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="//gfs17.gomein.net.cn/T1Uz_QBvbT1RCvBVdK_160.jpg"
+                                        alt="霓美舒 睡衣男士纯棉长袖春秋季套装韩版青年全棉休闲可外穿秋冬款家居服(LQE 8883（字母 数字28） 男款XXXL)"> </a>
+                                <p>
+                                    <span>¥43.90</span>
+                                </p>
+                            </li>
+                            <li style="top: 360px; left: 180px;">
+                                <a href="//item.gome.com.cn/A0006446390-pop8011650387.html?intcmp=box74-0-1_6_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="//gfs17.gomein.net.cn/T1AqYvBbWT1RCvBVdK_160.jpg"
+                                        alt="霓美舒 男士睡衣长袖纯棉春秋青年休闲简约韩版夏季薄款加大码家居服套装(LQE 8883（字母 数字28） 男款XXXL)"> </a>
+                                <p>
+                                    <span>¥43.90</span>
+                                </p>
+                            </li>
+                            <li style="top: 0px; left: 360px;">
+                                <a href="//item.gome.com.cn/A0006449463-pop8011689767.html?intcmp=box74-0-1_7_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="//gfs17.gomein.net.cn/T1.wEjB_YT1RCvBVdK_160.jpg"
+                                        alt="霓美舒 睡衣男春秋季纯棉长袖两件套休闲宽松大码男士夏天全棉薄款家居服(LQE 7115纯棉#枫叶 男款XXXL)"> </a>
+                                <p>
+                                    <span>¥99.00</span>
+                                </p>
+                            </li>
+                            <li style="top: 180px; left: 360px;">
+                                <a href="//item.gome.com.cn/A0006449482-pop8011689806.html?intcmp=box74-0-1_8_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="//gfs17.gomein.net.cn/T1FeDQBQ_T1RCvBVdK_160.jpg"
+                                        alt="霓美舒 七件套睡衣女士夏纯棉薄款吊带韩版长袖春秋可外穿家居服两件套装(HS 5233#七件套树叶睡袍纯棉 XL（适合118-140斤）)"> </a>
+                                <p>
+                                    <span>¥139.00</span>
+                                </p>
+                            </li>
+                            <li style="top: 360px; left: 360px;">
+                                <a href="//item.gome.com.cn/A0006458430-pop8011816163.html?intcmp=box74-0-1_9_0a70af2719070615221096"
+                                    target="_blank" title="" class="product-imgs">
+                                    <img width="160" height="160" gome-src="//gfs17.gomein.net.cn/T1I2K_ByLv1RCvBVdK_160.jpg"
+                                        alt="霓美舒 春秋天睡衣女长袖长裤两件套韩版宽松大码女式薄款家居服开衫套装(XX 522#条纹（蓝豹） XXL码)"> </a>
+                                <p>
+                                    <span>¥43.90</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pager">
+                        <ol>
+                            <li class="active">
+                                <a href="javascript:;">0</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">2</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!--大数据推荐 看了又看 end-->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+      <!--foot  -->
+      <div id="gome-foot">
+            <div id="gome-foot-box">
+                <ul class="foot_small_zdy_w">
+                    <li>
+                        <a data-code="1000043124-0" href="http://igome.com/" target="_blank" rel="nofollow">国美集团</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-1" href="//www.gomegj.com/" target="_blank">国美管家</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-2" href="//help.gome.com.cn/about/company.html" target="_blank">关于国美</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-3" href="//zp.gome.com.cn" target="_blank">加入我们</a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a data-code="1000043124-4" href="//brand.gome.com.cn/" target="_blank">品牌大全</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-5" href="//www.gome.com.cn/topic/" target="_blank">商品专题</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-6" href="//www.gome.com.cn/chanpin/" target="_blank">商品词</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-7" href="//www.gome.com.cn/hotwords/" target="_blank">热词搜索</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-8" href="//www.gome.com.cn/links/" target="_blank">友情链接</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-9" href="//news.gome.com.cn/4-8ef49f4b-1-8.html" target="_blank">风险监测</a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a data-code="1000043124-10" href="//cps.gome.com.cn/" target="_blank">销售联盟</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-11" href="//www.gome.com.cn/join/" target="_blank">商家入驻</a>
+                    </li>
+                    <li>
+                        <a data-code="1000043124-12" href="//amp.gome.com.cn" target="_blank">广告营销</a>
+                    </li>
+                </ul>
+                <p>本公司游戏产品适合18岁以上成年人使用&nbsp;&nbsp;违法和不良信息举报电话：021-39900132&nbsp;&nbsp;
+                    <a class="interDrug" href="//gfs13.gomein.net.cn/T1MvVsBCJT1RCvBVdK.jpg" target="_blank">互联网药品信息服务资格证编号（沪）-经营性-2019-0006</a>
+                </p>
+                <p>网络食品销售第三方平台提供者备案：沪网食备A0015号&nbsp;&nbsp;
+                    <a class="interDrug" href="http://gfs12.gomein.net.cn/wireless/T1TQWvB_DT1RCvBVdK_1594_2253.jpg" target="_blank">网络文化经营许可证沪网文[2017]5537-436号</a>&nbsp;&nbsp;
+                    <a class="interDrug" href="http://gfs10.gomein.net.cn/wireless/T1SdWQBXK_1RCvBVdK_2187_3157.jpg" target="_blank">增值电信业务经营许可证</a>
+                </p>
+                <p>国美在线电子商务有限公司&nbsp;&nbsp;办公地址:上海市嘉定区沪宜公路3163-3199号一楼A区&nbsp;&nbsp;客服电话:4008113333&nbsp;&nbsp;沪ICP备11009419号</p>
+                <p>
+                    北京国美在线电子商务有限公司&nbsp;&nbsp;办公地址:北京市朝阳区霄云路26号鹏润大厦B座17层&nbsp;&nbsp;电话:010-59288789&nbsp;&nbsp;京ICP备 19011786号</p>
+                <p>©2000-2019&nbsp;&nbsp;国美在线电子商务有限公司版权所有&nbsp;&nbsp;京公安网备11010502027062&nbsp;&nbsp;沪B2-20120004号&nbsp;&nbsp;
+                    <a class="interDrug" href="//www.gome.com.cn/companyinfo/" target="_blank">经营执照</a>&nbsp;&nbsp;
+                    <a class="interDrug" href="//gfs13.gomein.net.cn/T1_sDQB5C_1RCvBVdK.jpg" target="_blank">营业执照</a>&nbsp;&nbsp;
+                    <a class="interDrug" href="http://gfs13.gomein.net.cn/T17uAbBCV_1RCvBVdK.jpg" target="_blank">出版经营许可证</a>
+                </p>
+                <div class="gome-foot-credit">
+                    <!--<a class="credit-baxx" href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=dov73ne26zbqpugb8ivnfez35upwknav4n" target="_blank" rel="nofollow"><i></i><b>经营性网站备案信息</b></a> -->
+                    <a class="credit-xypj" href="https://ss.knet.cn/verifyseal.dll?sn=2011071100100011373&comefrom=trust" target="_blank" rel="nofollow">
+                        <i></i>
+                        <b>可信网站信用评价</b>
+                    </a>
+                    <!-- <a class="credit-cxwz" href="http://search.cxwz.org/cert/l/CX20111018000607000618" target="_blank" rel="nofollow"><i></i><b>诚信网站</b></a> -->
+                    <a class="credit-hdjc" href="http://www.cyberpolice.cn/wfjb/" target="_blank" rel="nofollow">
+                        <i></i>
+                        <b>朝阳网络警察</b>
+                    </a>
+                    <a class="credit-wgdj" href="http://scjgj.sh.gov.cn/platform/survey/step1_phone" target="_blank" rel="nofollow">
+                        <i></i>
+                        <b>网购大家评</b>
+                    </a>
+                    <a class="credit-report" href="http://www.shjbzx.cn/" target="_blank" rel="nofollow">
+                        <i></i>
+                        <b>上海市互联网违法和不良信息举报中心</b>
+                    </a>
+                    <!-- <a class="credit-syxy" href="https://sz.yhxy.org.cn/credit/verifyseal.php?sn=2008070300100000031&ct=df&pa=33&check=y" target="_blank" rel="nofollow"><i></i><b>炎黄鸿志商业信用认证体系</b></a> -->
+                </div>
+                <em class="turst-gome"></em>
+            </div>
+        </div>
+    
+    
+</body>
+
+</html>
