@@ -260,7 +260,8 @@ input.i-text[type="password"]{
 	background-color: #ffffff;
 	padding:9px 5px 9px 5px;
 	line-height:18px;	
-	/*position:absolute;*/
+	/* position: absolute;
+    top: -10px; */
 	float: left;
 	border:1px solid #ccc;
 	display:none;

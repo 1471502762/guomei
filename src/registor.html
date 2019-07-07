@@ -48,17 +48,24 @@
                             <span class="reg-label">
                                 <label for="J_Name">用户名：</label>
                             </span>
-                            <input id="name" maxlength="25" name="login" value="" tabindex="1" class="i-text" onkeypress="if(event.keyCode==13||event.which==13){return false;}"
-                                onfocus="nameFocus()" type="text" autocomplete="off" />
+                            <input id="name" maxlength="25" name="login"  tabindex="1" class="i-text" type="text" autocomplete="off"/>
                             <div class="msg-box" id="nameMsgbox">
-                                <div id="nameFocusbox" class="msg-box" style="display: none;">
-                                    <div id="nameFocusTips" class="msg-weak">
-                                        <i></i>
-                                        <div class="msg-cont">4-20个字符，支持汉字、字母、数字及“-”、“_”组合</div>
-                                    </div>
+
+
+                                <div id="nameFocusbox" class="msg-box"> <!-- block  -->
+                                  <div id="nameFocusTips" class="msg-weak"> <i></i>
+                                    <div class="msg-cont ">4-20个字符，支持汉字、字母、数字及“-”、“_”组合</div><!-- block 同时才显示   -->
+                                  </div>
                                 </div>
-                                <div class="msg-weak" id="nameTips"></div>
-                            </div>
+
+
+                                <div class="msg-weak err-tips" id="nameTips" style="position: absolute;top: -10px"><!-- block 显示 请输入用户名-->
+                                    <div class="msg-cont msg-cont-tishsi"></div> <!-- -->
+                                </div>
+                              </div>
+
+
+
                             <div id="tj_name" class="err-list hide">
                                 <p>推荐您使用：</p>
                                 <ul class="clearfix" id="tj_name_list"></ul>
@@ -107,8 +114,7 @@
                             <span class="reg-label">
                                 <label for="J_Mobile">手机号码：</label>
                             </span>
-                            <input id="mobile" maxlength="11" onpaste="return false" name="mobile" tabindex="3" class="i-text" onkeypress="if(event.keyCode==13||event.which==13){return false;}"
-                                type="text" isClick="true" />
+                            <input id="mobile" maxlength="11" onpaste="return false" name="mobile" tabindex="3" class="i-text" type="text" isClick="true"  autocomplete="off"/>
                             <!-- <div class="rule-box" style="display:none;" id="checkMobileTipError">
                                 <span class="rule-box-text">手机号码格式有误，请重新输入</span>
                                 <span class="rule-box-pos"></span>
@@ -277,11 +283,46 @@
         </div>
     </div>
     
-<div id="gome-foot" style="background:#fff; border: none; "></div>
+    <div id="gome-foot" style="background:#fff; border: none; ">
+            <div id="gome-foot-box" style="background: #fff; width: 990px">
+                <ul class="foot_small_zdy_w">
+                    <li><a data-code="1000043124-0" href="http://igome.com/" target="_blank" rel="nofollow" >国美集团</a></li>
+                    <li><a data-code="1000043124-1" href="//www.gomegj.com/" target="_blank" >国美管家</a></li>
+                    <li><a data-code="1000043124-2" href="//help.gome.com.cn/about/company.html" target="_blank" >关于国美</a></li>
+                    <li><a data-code="1000043124-3" href="//zp.gome.com.cn" target="_blank" >加入我们</a></li><li>|</li>
+                    <li><a data-code="1000043124-4" href="//brand.gome.com.cn/" target="_blank" >品牌大全</a></li>
+                    <li><a data-code="1000043124-5" href="//www.gome.com.cn/topic/" target="_blank" >商品专题</a></li>
+                    <li><a data-code="1000043124-6" href="//www.gome.com.cn/chanpin/" target="_blank" >商品词</a></li>
+                    <li><a data-code="1000043124-7" href="//www.gome.com.cn/hotwords/" target="_blank" >热词搜索</a></li>
+                    <li><a data-code="1000043124-8" href="//www.gome.com.cn/links/" target="_blank" >友情链接</a></li>
+                    <li><a data-code="1000043124-9" href="//news.gome.com.cn/4-8ef49f4b-1-8.html" target="_blank" >风险监测</a></li><li>|</li>
+                    <li><a data-code="1000043124-10" href="//cps.gome.com.cn/" target="_blank" >销售联盟</a></li>
+                    <li><a data-code="1000043124-11" href="//www.gome.com.cn/join/" target="_blank" >商家入驻</a></li>
+                    <li><a data-code="1000043124-12" href="//amp.gome.com.cn" target="_blank" >广告营销</a></li>
+                </ul>
+            <p>本公司游戏产品适合18岁以上成年人使用&nbsp;&nbsp;违法和不良信息举报电话：021-39900132&nbsp;&nbsp;<a class="interDrug" href="//gfs13.gomein.net.cn/T1MvVsBCJT1RCvBVdK.jpg" target="_blank">互联网药品信息服务资格证编号（沪）-经营性-2019-0006</a></p>
+            <p>网络食品销售第三方平台提供者备案：沪网食备A0015号&nbsp;&nbsp;<a class="interDrug" href="http://gfs12.gomein.net.cn/wireless/T1TQWvB_DT1RCvBVdK_1594_2253.jpg" target="_blank">网络文化经营许可证沪网文[2017]5537-436号</a>&nbsp;&nbsp;<a class="interDrug" href="http://gfs10.gomein.net.cn/wireless/T1SdWQBXK_1RCvBVdK_2187_3157.jpg" target="_blank">增值电信业务经营许可证</a></p>
+            <p>国美在线电子商务有限公司&nbsp;&nbsp;办公地址:上海市嘉定区沪宜公路3163-3199号一楼A区&nbsp;&nbsp;客服电话:4008113333&nbsp;&nbsp;沪ICP备11009419号</p>
+            <p>
+        北京国美在线电子商务有限公司&nbsp;&nbsp;办公地址:北京市朝阳区霄云路26号鹏润大厦B座17层&nbsp;&nbsp;电话:010-59288789&nbsp;&nbsp;京ICP备 19011786号</p>
+                <p>©2000-2019&nbsp;&nbsp;国美在线电子商务有限公司版权所有&nbsp;&nbsp;京公安网备11010502027062&nbsp;&nbsp;沪B2-20120004号&nbsp;&nbsp;<a class="interDrug" href="//www.gome.com.cn/companyinfo/" target="_blank">经营执照</a>&nbsp;&nbsp;<a class="interDrug" href="//gfs13.gomein.net.cn/T1_sDQB5C_1RCvBVdK.jpg" target="_blank">营业执照</a>&nbsp;&nbsp;<a class="interDrug" href="http://gfs13.gomein.net.cn/T17uAbBCV_1RCvBVdK.jpg" target="_blank">出版经营许可证</a></p>
+                <div class="gome-foot-credit">
+                    <!--<a class="credit-baxx" href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=dov73ne26zbqpugb8ivnfez35upwknav4n" target="_blank" rel="nofollow"><i></i><b>经营性网站备案信息</b></a> -->
+                    <a class="credit-xypj" href="" target="_blank" rel="nofollow"><i></i><b>可信网站信用评价</b></a>
+                    <!-- <a class="credit-cxwz" href="http://search.cxwz.org/cert/l/CX20111018000607000618" target="_blank" rel="nofollow"><i></i><b>诚信网站</b></a> -->
+                    <a class="credit-hdjc" href="http://www.cyberpolice.cn/wfjb/" target="_blank" rel="nofollow"><i></i><b>朝阳网络警察</b></a>
+                    <a class="credit-wgdj" href="http://scjgj.sh.gov.cn/platform/survey/step1_phone" target="_blank" rel="nofollow"><i></i><b>网购大家评</b></a>
+                    <a class="credit-report" href="http://www.shjbzx.cn/" target="_blank" rel="nofollow"><i></i><b>上海市互联网违法和不良信息举报中心</b></a>
+                    <!-- <a class="credit-syxy" href="https://sz.yhxy.org.cn/credit/verifyseal.php?sn=2008070300100000031&ct=df&pa=33&check=y" target="_blank" rel="nofollow"><i></i><b>炎黄鸿志商业信用认证体系</b></a> -->
+                </div>
+                <em class="turst-gome"></em>
+            </div>
+        </div>
     <script src="script/thirdplugins/jquery.min.js"></script>
-    <script>
+    <script src="script/js/registor.js"></script>
+    <!-- <script>
         $('#gome-foot').load("login.html #gome-foot-box");
-    </script>
+    </script> -->
      
 </body>
 
