@@ -253,6 +253,7 @@
     height: 450px;
     width: 100%;
     display: none;
+    transition: all 1s;
 }
 
 .gm_main .focus_box li a {
@@ -1732,12 +1733,12 @@
     display: inline-block;
     width: 17px;
     height: 9px;
-    background: url(//app.gomein.net.cn/gmpro/2.0.0/channel/newindex/8.5.3/css/i/ui.png) -216px -52px no-repeat;
+    background: url(../img/ui.png) -216px -52px no-repeat;
     margin-top: 10px
 }
 
 .elevator .fl_goto .fl_bottom a {
-    background: url(//app.gomein.net.cn/gmpro/2.0.0/channel/newindex/8.5.3/css/i/ui.png) no-repeat -216px 0
+    background: url(../img/ui.png) no-repeat -216px 0
 }
 
 .elevator li.current a, .elevator li.current a span, .elevator li.hover a, .elevator li.hover a span {
@@ -1793,11 +1794,11 @@
 }
 
 .elevator .fl_goto .flTop a.hover {
-    background: url(//app.gomein.net.cn/gmpro/2.0.0/channel/newindex/8.5.3/css/i/ui.png) no-repeat -216px -78px
+    background: url(../img/ui.png) no-repeat -216px -78px
 }
 
 .elevator .fl_goto .fl_bottom a.hover {
-    background: url(//app.gomein.net.cn/gmpro/2.0.0/channel/newindex/8.5.3/css/i/ui.png) no-repeat -216px -26px
+    background: url(../img/ui.png) no-repeat -216px -26px
 }
 
 .floor {

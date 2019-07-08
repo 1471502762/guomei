@@ -336,7 +336,7 @@ input.i-text[type="password"]{
 	display:block;
 	width:17px;
 	height:17px;
-	background:url(../../images/regfront/register/register.png) no-repeat 0 -20px;
+	background:url(../img/register/register.png) no-repeat 0 -20px;
 	overflow:hidden;
 	position:absolute;
 	top:10px;
