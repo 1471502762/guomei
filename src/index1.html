@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="css/set.css">
 	<link rel="stylesheet" href="css/rest.css">
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+		.largr_icon li:first-child{
+			display: block;
+		}
+	</style>
 </head>
 
 <body>
@@ -44,7 +49,28 @@
 						<a rel="nofollow">我的国美</a>
 						<i></i>
 					</b>
-					<div class="public-dropdown"></div>
+					<div class="public-dropdown" style="height: 0px;"><strong>我的国美，<a rel="nofollow" data-code="public01012" href="https://login.gome.com.cn/login">请登录！</a></strong>
+						<ul id="mygome-order">
+							<li><a data-code="public01013" href="//myhome.gome.com.cn/member/myOrder" target="_blank">待处理订单</a><ins id="waitPay"></ins></li>
+							<li><a data-code="public01014" href="//myhome.gome.com.cn/member/myFavorites" target="_blank">我的收藏</a></li>
+							<li><a data-code="public01016" href="//myhome.gome.com.cn/member/profile" target="_blank">个人资料</a></li>
+							<li><a data-code="public01060" href="//meidian.gome.com.cn" target="_blank">我的美店</a></li>
+						</ul>
+						<ul id="mygome-coupon">
+							<li><a data-code="public01061" href="//myhome.gome.com.cn/member/gomeMyCoupon?type=101" target="_blank">运费券</a><ins id="freightCoupon">-</ins></li>
+							<li><a data-code="public01017" href="//myhome.gome.com.cn/member/gomeMyCoupon?type=21" target="_blank">红&nbsp;券</a><ins id="redCoupon">-</ins></li>
+							<li><a data-code="public01018" href="//myhome.gome.com.cn/member/gomeMyCoupon?type=22" target="_blank">蓝&nbsp;券</a><ins id="blueCoupon">-</ins></li>
+							<li><a data-code="public01020" href="//myhome.gome.com.cn/member/gomeMyCoupon?type=24" target="_blank">店铺券</a><ins id="shopCoupon">-</ins></li>
+							<li class="none"><a data-code="public01022" href="//myhome.gome.com.cn/member/gomeMyCoupon?type=26" target="_blank">购物券</a><ins id="platformCoupon">-</ins></li>
+						</ul>
+						<p>足迹</p>
+						<ul id="mygome-track">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
 				</li>
 				<li class="gome-spacer"></li>
 				<li id="gome-enterprise" class="drop">
@@ -147,9 +173,6 @@
 					<span>关闭</span>
 				</div>
 			</div>
-			<script type="text/javascript">
-				var environment = 'commerce', targetType = 'Production', contentLabels = 'Catalog', language = 'chinese';
-			</script>
 		</div>
 		<div class="mygome-side" data-cart="mincart">
 			<ul class="topmenu clearfix">
@@ -702,113 +725,11 @@
 	
 					<!-- 轮播图 -->
 					<ul class="focus_box largr_icon">
-						<!-- <li style="display: block; background: rgb(95, 175, 228);">
-							<a>
-								<img class="lazyloading" src="https://gfs13.gomein.net.cn/T15QbsB7Cv1RCvBVdK.jpg" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li> -->
-						<li style="display: block; background: rgb(106, 168, 241);">
-							<a href="//prom.gome.com.cn/html/prodhtml/topics/201906/28/1152022682.html?intcmp=sy-1000060757-1" data-code="1000060757-1"
-							 target="_blank">
-								<img class="lazyloading" src="https://gfs10.gomein.net.cn/T1Ml_sBbxT1RCvBVdK.jpg" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(80, 141, 74); display: none;">
-							<a>
-								<img class="lazyloading" src="https://gfs13.gomein.net.cn/T17lVsByJv1RCvBVdK.jpg" data-lazy-init="//gfs13.gomein.net.cn/T1mhWsBvLT1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(96, 175, 232); display: none;">
-							<a>
-								<img class="lazyloading" src="https://gfs10.gomein.net.cn/T1mQCsBCx_1RCvBVdK.jpg" data-lazy-init="//gfs10.gomein.net.cn/T1mQCsBCx_1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(91, 135, 174); display: none;">
-							<a href="https://prom.gome.com.cn/html/prodhtml/topics/201709/18/7456103420.html">
-								<img class="lazyloading" src="https://gfs12.gomein.net.cn/T109VsBvWT1RCvBVdK.jpg" data-lazy-init="//gfs12.gomein.net.cn/T1uLJsBTZT1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(43, 1, 186); display: none;">
-							<a href="//prom.gome.com.cn/html/prodhtml/topics/201905/21/2143737111.html">
-								<img class="lazyloading" src="https://gfs13.gomein.net.cn/T1OqEsB4JT1RCvBVdK.jpg" data-lazy-init="//gfs11.gomein.net.cn/T1n_xsBXCT1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(97, 173, 248); display: none;">
-							<a>
-								<img class="lazyloading" src="https://gfs11.gomein.net.cn/T1qfKsB4dT1RCvBVdK.jpg" data-lazy-init="//gfs13.gomein.net.cn/T1p6DbB5K_1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(223, 244, 245); display: none;">
-							<a href="//prom.gome.com.cn/html/prodhtml/topics/201906/28/1152022682.html">
-								<img class="lazyloading" src="https://gfs11.gomein.net.cn/T1XgxsBX_v1RCvBVdK.jpg" data-lazy-init="//gfs10.gomein.net.cn/T1Ml_sBbxT1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
-						<li style="background: rgb(163, 225, 246); display: none;">
-							<a>
-								<img class="lazyloading" src="https://gfs13.gomein.net.cn/T15QbsB7Cv1RCvBVdK.jpg" data-lazy-init="//gfs13.gomein.net.cn/T15QbsB7Cv1RCvBVdK.jpg"
-								 data-lazy-img="done" alt="" title="" width="100" height="100">
-							</a>
-							<span class="promotion_tags">
-								<img src="//app.gomein.net.cn/images/grey.gif">
-							</span>
-						</li>
+						<!-- 渲染图片 -->
 					</ul>
 					<!-- 小按钮 -->
 					<ol class="nav edit-mode small_button">
-						<li class="cur">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
-						<li class="">
-							<a></a>
-						</li>
+						<!-- 渲染按钮 -->
 					</ol>
 					<div class="slider-extra">
 						<div class="btn pre" onselectstart="return false" style="-moz-user-select:none;">
@@ -4317,83 +4238,88 @@
 
 	<!-- 左边楼梯 -->
 	<div id="elevator" class="elevator" style="z-index: 960; position: fixed; left: -1.5px; top: 11.5em; display: none;">
-		<div class="fl_nav">楼层导航</div>
-		<ul>
-			<li class="handler current" data-idx="0">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>1F</span>
-					<p>手机通讯</p>
-				</a>
-			</li>
-			<li class="handler" data-idx="1">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>2F</span>
-					<p>电脑数码</p>
-				</a>
-			</li>
-			<li class="handler" data-idx="2">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>3F</span>
-					<p>家用电器</p>
-				</a>
-			</li>
-			<li class="handler" data-idx="3">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>4F</span>
-					<p>厨房卫浴</p>
-				</a>
-			</li>
-			<li class="handler" data-idx="4">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>5F</span>
-					<p>国美超市</p>
-				</a>
-			</li>
-			<li class="handler" data-idx="5">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>6F</span>
-					<p>家居家装</p>
-				</a>
-			</li>
-			<li class="handler" data-idx="6">
-				<b class="etitle" href="javascript:;"></b>
-				<a href="javascript:;">
-					<span>7F</span>
-					<p>汽车用品</p>
-				</a>
-			</li>
-		</ul>
-		<ul class="fl_goto">
-			<li class="flTop">
-				<a href="javascript:;" class=""></a>
-			</li>
-			<li class="fl_bottom">
-				<a href="javascript:;" class=""></a>
-				<span></span>
-			</li>
-		</ul>
-	</div>
+			<div class="fl_nav">楼层导航</div>
+			<ul>
+				<li class="handler current" data-idx="0">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>1F</span>
+						<p>手机通讯</p>
+					</a>
+				</li>
+				<li class="handler" data-idx="1">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>2F</span>
+						<p>电脑数码</p>
+					</a>
+				</li>
+				<li class="handler" data-idx="2">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>3F</span>
+						<p>家用电器</p>
+					</a>
+				</li>
+				<li class="handler" data-idx="3">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>4F</span>
+						<p>厨房卫浴</p>
+					</a>
+				</li>
+				<li class="handler" data-idx="4">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>5F</span>
+						<p>国美超市</p>
+					</a>
+				</li>
+				<li class="handler" data-idx="5">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>6F</span>
+						<p>家居家装</p>
+					</a>
+				</li>
+				<li class="handler" data-idx="6">
+					<b class="etitle" href="javascript:;"></b>
+					<a href="javascript:;">
+						<span>7F</span>
+						<p>汽车用品</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="fl_goto">
+				<li class="flTop">
+					<a href="javascript:;" class=""></a>
+				</li>
+				<li class="fl_bottom">
+					<a href="javascript:;" class=""></a>
+					<span></span>
+				</li>
+			</ul>
+		</div>
 
 
-	<script src="script/thirdplugins/jquery.min.js"></script>
-	<script src="script/js/index.js"></script>
-	<script> 
-			// window.onload=function(){
-				$('.focus').lunbo({
-				$bannerulli: $('.largr_icon li'),
-				$bannerolli: $('.small_button li'),
-				$left: $('.pre'),
-				$right: $('.nex'),
-				qihuantype: 'opacity',
-				zdswitchover: true
-			});
-		</script>
+
+
+
+
+
+<script src="script/thirdplugins/jquery.min.js"></script>
+<script src="script/js/index.js"></script>
+<script>
+		$('.focus').lunbo({
+			$bannerulli: $('.focus_box li'),
+			$bannerolli: $('.edit-mode li'),
+			$left: $('.pre'),
+			$right: $('.nex'),
+			qihuantype: 'opacity',
+			zdswitchover: true,
+			type:'mousemove',//事件类型
+		});
+	</script>
 </body>
 
 </html>
