@@ -10,18 +10,41 @@
 	// 	});
 	// });
 
+
+//猜你喜欢数据
+
+
+
+
+
+
+	
 	//lunbo数据
 	$.ajax({
 		type: "POST",
 		url: "http://localhost/guomei/php/index1.php",
 		dataType:'json',
 	}).done(function (bannerdata) {
-				let $largr_icon=$('.largr_icon');
+				// console.log(bannerdata.lunbo);
+				// 获取头部轮播数据
+				let $bann=bannerdata.lunbo;
+				headbann($bann);
+
+				// 获取猜你喜欢数据
+				let $guess=bannerdata.guomei;
+				guesslike($guess);
+
+			
+		});
+
+		// 渲染头部轮播
+		function headbann($bann){
+			let $largr_icon=$('.largr_icon');
+			// console.log($largr_icon);
 				let $small_button=$('.small_button');
 				$jegouli='';
 				$jegouol='';
-
-			$.each(bannerdata, function (index, $value) {
+			$.each($bann, function (index, $value) {
 				$jegouli+=`
 				<li style="background:${$value.background}">
 							<a href="//prom.gome.com.cn/html/prodhtml/topics/201906/28/1152022682.html?intcmp=sy-1000060757-1" data-code="1000060757-1"
@@ -43,16 +66,38 @@
 			$small_button.html($jegouol);
 			$small_button.find("li").eq(0).addClass("cur");
 			$largr_icon.find("li").eq(0).show();
-			// console.log($small_button.find("li").eq(0))
-			// $(function() {//和拼接的元素放在一起。
-			// 	console.log($largr_icon.find('li').find("img.lazy"));
-			// 	$largr_icon.find('li').find("img.lazy").lazyload({
-			// 		effect: "fadeIn"//图片显示方式
-			// 	});
-			// });
-		});
+		};
 
-
+		// 渲染猜你喜欢
+		function guesslike($guess){
+			// console.log($guess);
+			let $jimgloadrecomm=$('#j-imgload-recomm');
+			let $like_commodity='';
+				$.each($guess,function(index,$elem){
+					// console.log($elem.tradename);
+					$like_commodity+=`
+						<li maima_param="undefined" productid="A0006519174">
+							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="//item.gome.com.cn/A0006519174-pop8012460453.html?intcmp=box20-v1-1_1_0a70af2719070420141117&amp;frm=bigd">
+								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.url}"
+								 data-lazy-init="//gfs17.gomein.net.cn/T1W5WsBTdT1RCvBVdK_120.jpg" data-lazy-img="done">
+								<p class="guess_title">"${$elem.tradename}"</p>
+								<p class="guess_price">
+									<span class="yuan">¥</span>"${$elem.price}"</p>
+							</a>
+						</li>
+						
+					`;
+					if(index>=0&&index<6){
+					$('.ul1').html($like_commodity);	
+					}else if(index>=6&&index<12){
+					$('.ul2').html($like_commodity);
+					}else if(index>=12&&index<17){
+					$('.ul3').html($like_commodity);
+					}
+				});
+			// $like_commodity+='</ul>';
+			// $jimgloadrecomm.html($like_commodity);
+		}
 		
 
 
