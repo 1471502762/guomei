@@ -9,11 +9,6 @@
 	<link rel="stylesheet" href="css/set.css">
 	<link rel="stylesheet" href="css/rest.css">
 	<link rel="stylesheet" href="css/index.css">
-	<style>
-		.largr_icon li:first-child{
-			display: block;
-		}
-	</style>
 </head>
 
 <body>
@@ -721,7 +716,7 @@
 		<div class="focus">
 				<div class="focus_img_bg">
 				</div>
-				<div>
+				<div class="banfocus">
 	
 					<!-- 轮播图 -->
 					<ul class="focus_box largr_icon">
@@ -913,8 +908,8 @@
 					</div>
 					<div class="countdown_l_b">
 						<div class="countdown_lists">
-							<div class="list">
-								<div class="lay first">
+							<div class="list chunklist">
+								<div class="lay first chunk">
 									<div class="list_li 0">
 										<a href="//tuan.gome.com.cn/q?itemId=Q8801428020" title="FSL佛山照明 LED灯泡E27螺口超亮LED球泡室内节能灯 暖黄灯泡 白光灯泡(暖黄（3000K） 3W（2支装）)" data-code="indextuan1">
 											<img class="lazyloading" src="//gfs17.gomein.net.cn/T12sWjBmAv1RCvBVdK_120.jpg" alt="FSL佛山照明 LED灯泡E27螺口超亮LED球泡室内节能灯 暖黄灯泡 白光灯泡(暖黄（3000K） 3W（2支装）)"
@@ -965,7 +960,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="lay two">
+								<div class="lay two chunk">
 									<div class="list_li 4">
 										<a href="//tuan.gome.com.cn/q?itemId=Q8801395442" title="港荣椰香味蛋糕2kg早餐营养儿童零食品软面包整箱糕点点心(口味 弹弹蒸蛋)" data-code="indextuan5">
 											<img class="lazyloading" src="//gfs17.gomein.net.cn/T1XpCsBvAv1RCvBVdK_120.jpg" alt="港荣椰香味蛋糕2kg早餐营养儿童零食品软面包整箱糕点点心(口味 弹弹蒸蛋)"
@@ -1018,14 +1013,20 @@
 									</div>
 								</div>
 							</div>
+							<div>
+								<ul class="rush_button2" style="display:none">
+									<li><a href="javascript:;">1</a></li>
+									<li><a href="javascript:;">2</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div class="countdown_btn index_pabs" style="display: block;">
-						<div class="j_btn prebtn" onselectstart="return false" style="-moz-user-select:none;">
+					<div class="countdown_btn index_pabs arrows">
+						<div class="j_btn prebtn" onselectstart="return false" style="display: none">
 							<span class="btnbg"></span>
 							<p class="go_icon btn_l"></p>
 						</div>
-						<div class="j_btn nexbtn" onselectstart="return false" style="-moz-user-select:none;">
+						<div class="j_btn nexbtn" onselectstart="return false" style="display: none">
 							<span class="btnbg"></span>
 							<p class="go_icon btn_r"></p>
 						</div>
@@ -1204,8 +1205,8 @@
 			<h2>猜你喜欢</h2>
 			<span>YOU MAY LIKE</span>
 			<div class="change_btn">
-				<a class="pre" style="-moz-user-select:none;"></a>
-				<a class="nex" style="-moz-user-select:none;"></a>
+				<a class="pre" style="display: block"></a>
+				<a class="nex" style="display: block"></a>
 			</div>
 		</div>
 		<div class="guess_main" id="guess_main" data-lazy-img-install="1">
@@ -4308,17 +4309,28 @@
 
 
 <script src="script/thirdplugins/jquery.min.js"></script>
+<script src="script/js/jquery.lazyload.js"></script>
 <script src="script/js/index.js"></script>
 <script>
-		$('.focus').lunbo({
-			$bannerulli: $('.focus_box li'),
-			$bannerolli: $('.edit-mode li'),
+		$('.banfocus').lunbo({
 			$left: $('.pre'),
 			$right: $('.nex'),
 			qihuantype: 'opacity',
 			zdswitchover: true,
 			type:'mousemove',//事件类型
 		});
+
+
+	</script>
+	<script>
+	$('.chunklist').smalllunbo({
+				$bannerul: $('.chunk'),
+				$rush_buttonli: $('.rush_button2 li'),
+				$left: $('.prebtn'),
+				$right: $('.nexbtn'),
+				qihuantype: 'opacity',
+
+			});
 	</script>
 </body>
 
