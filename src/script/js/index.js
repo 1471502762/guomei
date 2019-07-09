@@ -41,9 +41,7 @@
 		function headbann($bann){
 			let $largr_icon=$('.largr_icon');
 			// console.log($largr_icon);
-				let $small_button=$('.small_button');
 				$jegouli='';
-				$jegouol='';
 			$.each($bann, function (index, $value) {
 				$jegouli+=`
 				<li style="background:${$value.background}">
@@ -55,16 +53,9 @@
 								<img src="//app.gomein.net.cn/images/grey.gif">
 							</span>
 				</li>
-				`;
-				$jegouol+=`
-				<li class="">
-							<a></a>
-				</li>
 				`
 			});
 			$largr_icon.html($jegouli);
-			$small_button.html($jegouol);
-			$small_button.find("li").eq(0).addClass("cur");
 			$largr_icon.find("li").eq(0).show();
 		};
 
@@ -76,8 +67,8 @@
 				$.each($guess,function(index,$elem){
 					// console.log($elem.tradename);
 					$like_commodity+=`
-						<li maima_param="undefined" productid="A0006519174">
-							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="//item.gome.com.cn/A0006519174-pop8012460453.html?intcmp=box20-v1-1_1_0a70af2719070420141117&amp;frm=bigd">
+						<li maima_param="undefined" productid="A0006519174" style="block">
+							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="details.html?sid=${$elem.id}">
 								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.url}"
 								 data-lazy-init="//gfs17.gomein.net.cn/T1W5WsBTdT1RCvBVdK_120.jpg" data-lazy-img="done">
 								<p class="guess_title">"${$elem.tradename}"</p>
@@ -88,9 +79,11 @@
 						
 					`;
 					if(index>=0&&index<6){
-					$('.ul1').html($like_commodity);	
+					$('.ul1').html($like_commodity);
+					index=6;	
 					}else if(index>=6&&index<12){
 					$('.ul2').html($like_commodity);
+					index=12;
 					}else if(index>=12&&index<17){
 					$('.ul3').html($like_commodity);
 					}
@@ -136,7 +129,7 @@
 				// 默认属性
 				console.log()
                 let $obj={
-					$bannerol:$(ele).find('.small_button'),
+					$bannerol:$('.small_button li'),
 					$bannerul:$(ele).find('.largr_icon'),
 					$left:$(ele).find('.left'),
 					$right:$(ele).find('.right'),
@@ -152,14 +145,14 @@
                 // 判断切换类型
                 if($obj.type==='click'||$obj.type!=='mouseover'){
 					// 给当前li添加事件
-                    $obj.$bannerol.find("li").on('click',function(){
+                    $obj.$bannerol.on('click',function(){
                         // 把当前li的索引赋给$num
                         $num=$(this).index();
                         qiehuan();
                     });
                 }else{
                     // 给当前li添加事件
-                    $obj.$bannerol.find("li").on('mouseover',function(){                      //？？？？？？？？此时获取不到li
+                    $obj.$bannerol.on('mouseover',function(){  
                         // 把当前li的索引赋给$num
                         $num=$(this).index();
                         qiehuan();
@@ -203,13 +196,13 @@
                 function qiehuan(){
 					// 直接切换
                     if($obj.qihuantype==='display'|| $obj.qihuantype!=='opacity'){
-                        $obj.$bannerol.find("li").eq($num).addClass('cur').siblings().removeClass('cur');
+                        $obj.$bannerol.eq($num).addClass('cur').siblings().removeClass('cur');
                         $obj.$bannerul.find("li").eq($num).show().siblings().hide();
 						
                     }else{
 					//透明度切换
                         $obj.$bannerul.find("li").eq($num).css('transition','all 1s');
-                        $obj.$bannerol.find("li").eq($num).addClass('cur').siblings().removeClass('cur');
+                        $obj.$bannerol.eq($num).addClass('cur').siblings().removeClass('cur');
                         $obj.$bannerul.find("li").eq($num).show().siblings().hide();
 					}
 
@@ -244,7 +237,7 @@
                 function djleft(){
                     $num--;
                     if($num<0){
-                        $num=$obj.$bannerol.find("li").length-1;
+                        $num=$obj.$bannerol.length-1;
                     }
                     qiehuan();
                 };
@@ -252,7 +245,7 @@
                 //点击右箭头进行图片切换
                 function djright(){
                     $num++;
-                    if($num>$obj.$bannerol.find("li").length-1){
+                    if($num>$obj.$bannerol.length-1){
                         $num=0;
                     }
                     qiehuan();
@@ -341,7 +334,6 @@
 				//用于存当前li的索引
 				let $num=null;
 				// 默认属性
-				console.log()
 				let $obj={
 					$bannerul: $('.chunk'),
 					$rush_buttonli: $('.rush_button2 li'),
@@ -378,7 +370,7 @@
 					});
 					// 鼠标移出  隐藏箭头
 					$(this).on("mouseout",function(){
-						jtyc();
+						// jtyc();
 						// 鼠标移出 继续切换
 						// $qh=setInterval(function(){
 						// 	djright();
@@ -411,11 +403,13 @@
 						// $obj.$rush_buttonli.eq($num).hide().siblings().hide();
 						$obj.$bannerul.eq($num).show().siblings().hide();
 						
+						
 					}else{
 					//透明度切换
 						$obj.$bannerul.eq($num).css('transition','all 1s');
 						// $obj.$rush_buttonli.eq($num).hide().siblings().hide();
 						$obj.$bannerul.eq($num).show().siblings().hide();
+						// alert(1);
 					}
 				};
 
@@ -429,21 +423,21 @@
 
 				// 箭头显示
 				function jtxs(){
-					$('.arrows').show();
-					$obj.$left.show();
-					$obj.$right.show();
+					// $('.arrows').show();
+					// $obj.$left.show();
+					// $obj.$right.show();
 					// $obj.$left.css('display','block');
 					// $obj.$right.css('display','block');
 				}
 
 
 				// 箭头隐藏
-				function jtyc(){
-					$obj.$left.hide();
-					$obj.$right.hide();
-					// $obj.$left.css('display','none');
-					// $obj.$right.css('display','none');
-				};
+				// function jtyc(){
+				// 	$obj.$left.hide();
+				// 	$obj.$right.hide();
+				// 	// $obj.$left.css('display','none');
+				// 	// $obj.$right.css('display','none');
+				// };
 
 				//点击左箭头进行图片切换
 				function djleft(){

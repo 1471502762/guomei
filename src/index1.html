@@ -9,6 +9,14 @@
 	<link rel="stylesheet" href="css/set.css">
 	<link rel="stylesheet" href="css/rest.css">
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+		/* .prebtn1:hover, .nexbtn2:hover{
+			display: block;
+		}
+		.prebtn1,nexbtn2{
+			display: none;
+		} */
+	</style>
 </head>
 
 <body>
@@ -724,7 +732,30 @@
 					</ul>
 					<!-- 小按钮 -->
 					<ol class="nav edit-mode small_button">
-						<!-- 渲染按钮 -->
+							<li class="cur">
+									<a></a>
+						</li>
+						<li class="">
+								<a></a>
+					</li>
+					<li class="">
+							<a></a>
+				</li>
+				<li class="">
+						<a></a>
+			</li>
+			<li class="">
+					<a></a>
+		</li>
+		<li class="">
+				<a></a>
+	</li>
+	<li class="">
+			<a></a>
+</li>
+<li class="">
+		<a></a>
+</li>
 					</ol>
 					<div class="slider-extra">
 						<div class="btn pre  but1lunbo" onselectstart="return false" style="-moz-user-select:none;">
@@ -1021,12 +1052,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="countdown_btn index_pabs arrows">
-						<div class="j_btn prebtn" onselectstart="return false" style="display: none">
+					<div class="countdown_btn index_pabs arrows" style="display: block">
+						<div class="j_btn prebtn prebtn1" onselectstart="return false">
 							<span class="btnbg"></span>
 							<p class="go_icon btn_l"></p>
 						</div>
-						<div class="j_btn nexbtn" onselectstart="return false" style="display: none">
+						<div class="j_btn nexbtn nexbtn2" onselectstart="return false">
 							<span class="btnbg"></span>
 							<p class="go_icon btn_r"></p>
 						</div>
@@ -1211,12 +1242,19 @@
 		</div>
 		<div class="guess_main" id="guess_main" data-lazy-img-install="1">
 			<div id="j-imgload-recomm">
-				 <ul style="display: block" class="ul1">
+				 <ul style="display: block" class="ul1 likebutbom">
 				</ul>
-				<ul style="display: none" class="ul2">
+				<ul style="display: none" class="ul2 likebutbom">
 				</ul>
-				<ul style="display: none" class="ul3">
+				<ul style="display: none" class="ul3 likebutbom">
 				</ul>
+			</div>
+			<div style="display: none">
+				<ol class="likebut">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ol>
 			</div>
 		</div>
 	</div>
@@ -4164,8 +4202,8 @@
 		$('.chunklist').smalllunbo({
 				$bannerul: $('.chunk'),
 				$rush_buttonli: $('.rush_button2 li'),
-				$left: $('.prebtn'),
-				$right: $('.nexbtn'),
+				$right: $('.prebtn'),
+				$left: $('.nexbtn'),
 				qihuantype: 'opacity',
 
 		});
@@ -4173,13 +4211,14 @@
 
 
 		// 猜你喜欢
-		// $('.banfocus').lunbo({
-		// 	$left: $('.but1lunbo'),
-		// 	$right: $('.but2lunbo'),
-		// 	qihuantype: 'opacity',
-		// 	zdswitchover: true,
-		// 	type:'mousemove',//事件类型
-		// });
+		$('#j-imgload-recomm').smalllunbo({
+					$bannerul: $('.likebutbom'),
+					$rush_buttonli: $('.likebut li'),
+					$right: $('.but1like'),
+					$left: $('.but2like'),
+					qihuantype: 'opacity',
+		});
+
 	</script>
 </body>
 
