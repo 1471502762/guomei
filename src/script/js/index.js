@@ -69,7 +69,7 @@
 					$like_commodity+=`
 						<li maima_param="undefined" productid="A0006519174" style="block">
 							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="details.html?sid=${$elem.id}">
-								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.url}"
+								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.href}"
 								 data-lazy-init="//gfs17.gomein.net.cn/T1W5WsBTdT1RCvBVdK_120.jpg" data-lazy-img="done">
 								<p class="guess_title">"${$elem.tradename}"</p>
 								<p class="guess_price">

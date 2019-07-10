@@ -1,35 +1,82 @@
 ; !function ($) {
+
+	// 获取地址栏的id
+	var picid = location.search.substring(1).split('=')[1];
 	//渲染
 	$.ajax({
 		type: "POST",
 		url: "http://localhost/guomei/php/details.php",
-		async:true,
-		dataType:'json',
+		async: true,
+		dataType: 'json',
+		data: {
+			sid: picid
+		},
 	}).done(function (glassdata) {
-				let $jqzoom=$('.pic-big .jqzoom');//图片
-				let $jpichover=$('.j-pichover');//小图片
-				$smallglass='';
-				$smallicons='';
-                // console.log(glassdata);//返回值是数组
-                let urlarr=glassdata[0].url.split(',')//将url字符串拆分成数组
-			$.each(glassdata, function (index, $value) {	
-				$smallglass+=`
-				<div class="jqzoom">
-                        <img width="360" height="360" class="j-bpic-b" jqimg="//gfs3.gomein.net.cn/T13nZgBgYv1RCvBVdK_800_pc.jpg" alt="【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)"
-                            _src="${$value[index].url[0]}">
-                        <a title="点击看【限购1000件】两支装 中性笔橡胶杆0.38mm黑色水笔学生笔碳素笔办公签字笔(橡胶杆中性笔0.38mm#2支装)大图" target="_blank" href="//item.gome.com.cn/bigimage/A0006529651-pop8012541258.html"
-                            class="pic-l-b" style="display: block;"></a>
-                    </div>
-				`;
-				$smallicons+=`
-				<li class="">
-							<a></a>
-				</li>
-				`
-
-			});
-			// $jqzoom.html($smallglass);
-			// $jpichover.html($smallicons);
-			
+		let $jqzoom = $('.pic-big .jqzoom');//放大镜的小图图片
+		let $magnifying=$('.zoomdiv');
+		let $jpichover = $('.j-pichover ul');//下 小图片
+		let $urlarr=glassdata.url.split(',');
+		// console.log($urlarr);
+		$smallglass = '';
+		$smallicons='';
+		$list='';
+		$.each($urlarr,function(index,value){
+			$list+=`<li>
+			<a href="javascript:;">
+				<img rpic="//gfs.gomein.net.cn/T1f.DsB4Av1RCvBVdK_800_pc.jpg" bpic="//gfs.gomein.net.cn/T1f.DsB4Av1RCvBVdK_360.jpg" alt="【8包*100抽】江娃原木抽纸整箱家庭装婴儿抽取式面巾纸(默认)第2张高清大图" title="【8包*100抽】江娃原木抽纸整箱家庭装婴儿抽取式面巾纸(默认)第2张高清大图" src="${value}" class="" width="50" height="50">
+			</a>
+		</li>`
 		});
+		$smallglass += `<img class="j-bpic-b" alt="【8包*100抽】江娃原木抽纸整箱家庭装婴儿抽取式面巾纸(默认)" src="${glassdata.href}" width="360" height="360">
+				`;
+		$smallicons+=`<img class="bigimg" src="${$urlarr[0]}">`;
+		$jqzoom.prepend($smallglass);
+		$magnifying.html($smallicons);
+		$jpichover.html($list);
+	});
+
+
+	// 放大镜效果
+	!function($){
+		let $jqzoom=$('.jqzoom');
+		let $zoomdiv=$('.zoomdiv');
+		$jqzoom.hover(function(){
+			$zoomdiv.css('visibility','visible');
+		},function(){
+			$zoomdiv.css('visibility','hidden');
+		});
+
+
+
+
+
+
+
+
+
+		//小图切换
+		let $jpichover = $('.j-pichover ul');
+		$jpichover.on("mouseover","li",function(){
+			let $imgsrc=$(this).find("img").attr("src");
+			$jqzoom.find('img').attr("src",$imgsrc);
+			$zoomdiv.find("img").attr("src",$imgsrc)
+		});
+
+
+		//点击箭头进行切换
+		let $num=5;
+		$('.pic-btn-r').on("click",function(){
+			
+			if($jpichover.find("li").length>$num){
+				$num++;
+				console.log($jpichover.find("li").eq(0).innerWidth()*$num);
+				$jpichover.animate({
+					left:-($num-5)*$jpichover.find("li").eq(0).innerWidth()
+				});
+			}
+			
+		})
+
+	}(jQuery);
+
 }(jQuery);
