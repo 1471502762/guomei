@@ -1,5 +1,8 @@
 <?php
 require "conn.php";
-    $sid=$_POST['sid'];
-    $result=$conn->query("select * from guomei where id=$sid");
-    echo json_encode($result->fetch_assoc());
+    $result=$conn->query("select * from guomei");
+    $dataarr=array();
+    for($i=0;$i<$result->num_rows;$i++){
+    $dataarr[$i] = $result->fetch_assoc();
+    }
+    echo json_encode($dataarr);
