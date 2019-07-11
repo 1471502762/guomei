@@ -17,7 +17,6 @@
 		let $jpichover = $('.j-pichover ul');//下 小图片
 		let $prdimgitemimg = $('.prd-img-item-img');//商品颜色图片
 		let $urlarr=glassdata.url.split(',');
-		// console.log($urlarr);
 		$smallglass = '';
 		$smallicons='';
 		$itemimg='';
@@ -31,7 +30,10 @@
 		</li>`
 		});
 		// 小图
-		$jqzoomimg.attr("src",`${glassdata.href}`);
+		$jqzoomimg.attr({
+			src:`${glassdata.href}`,
+			sid:`${glassdata.id}`
+		});
 		// //商品颜色图片
 		$itemimg += `<img src="${glassdata.href}" gome-src="//gfs17.gomein.net.cn/T1tzKjB7b_1RCvBVdK_60.jpg" alt="橡胶杆中性笔0.38mm#2支装">
 		<span>${glassdata.describe}</span>`;
@@ -49,7 +51,6 @@
 		const $xf=$('.jqZoomPup');//小放
 		let $bpic=$('.zoomdiv').find("img");// 大图
 		let $spic=$('.jqzoom').find("img");//小图
-		// console.log($('.jqzoom').offset().left); 
 		$jqzoom.mouseover(function(){
 			// 显示放大镜
 			$df.css('visibility','visible');
@@ -77,10 +78,7 @@
 					tt = $spic.height() - $xf.height() - 2;
 				};
 				$xf.css({top:tt,left:ll});
-				// tt=t-$('.jqzoom').offset().top;
-				// ll=t-$('.jqzoom').offset().left;
 				$bpic.css({top:-tt* $bili,left:-ll * $bili});
-				console.log(-tt* $bili)
 			})
 		});
 		$jqzoom.mouseout(function () {
@@ -134,10 +132,71 @@
 
 
 	// 点击加入购物车
-	// !function($){
-	// 	const $btnaddcart=$('.btn-addcart');
-	// 	$btnaddcart.on("click",function(){
+	!function($){
+		const $jgACbtn=$('.j-gACbtn');//减数量
+		const $jgACbtnA=$('.j-gACbtnA');//加数量
+		const $jgACvalinput=$('.j-gACval-input');//数量
+		const $btnaddcart=$('.btn-addcart');//加入购物车按钮
+		// 加数量
+			let num=1;
+			$jgACbtnA.on("click",function(){
+				
+			$jgACvalinput.val(function(){
+				return ++num;
+			});
+			if(num>1){
+				// 显示减号按钮
+					$jgACbtn.removeClass("disab"); 
+			}
+		});
+		// 减数量
+			$jgACbtn.on("click",function(){
+				
+				 if(num>1){
+				$jgACvalinput.val(function(){
+					return --num;
+				});
+			};
+			if(num==1){
+				// 关闭减号按钮
+				$jgACbtn.addClass("disab"); 
+			}
+			});
+		
 
-	// 	})
-	// }(jQuery);
+
+
+
+
+
+
+		//购物车的操作
+    let arrsid = [];  //商品的编号sid [1,3,5]
+    let arrnum = [];  //商品的数量 [12,24,36]
+
+    //如果cookie存在，获取cookie的值，并转换成数组。
+    function cookievalue() {
+		$.cookie('sid');
+        if ($.cookie('sid') && $.cookie('num')) {
+            arrsid = $.cookie('sid').split(',');//将获取的cookie转换成数组
+            arrnum = $.cookie('num').split(',');
+        }
+    }
+	$btnaddcart.on("click",function(){
+        cookievalue();
+		//当前按钮对应得sid，如果当前按钮对应得sid存在arrsid中，存在
+		let $jqzoomimg = $('.pic-big .jqzoom').find("img");//小图
+		let id = $jqzoomimg.attr('sid');//当前页面的sid
+        if (arrsid.indexOf(id) === -1) {//不存在
+            arrsid.push(id);
+			arrnum.push($jgACvalinput.val());
+			$.cookie('sid', arrsid.toString(),{ expires: 7 });
+			$.cookie('num', arrnum.toString(),{ expires: 7 });
+		}else{//存在，数量累计
+           let sum=Number(arrnum[arrsid.indexOf(id)]) + Number($jgACvalinput.val());
+           arrnum[arrsid.indexOf(id)]=sum;
+		   $.cookie('num', arrnum.toString(),{ expires: 7 });
+		}
+    });
+	}(jQuery);
 }(jQuery);
