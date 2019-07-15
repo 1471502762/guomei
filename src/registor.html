@@ -86,21 +86,10 @@
                             <input id="password" maxlength="20" onpaste="return false" name="password" value="" tabindex="2" class="i-text" type="password"
                                 isClick="false" />
                             <div class="msg-box" id="passwordMsgbox">
-                                <div class="msg-weak err-tips" id="passwordTips"></div>
+                                 <div class="msg-weak" id="passwordTips"></div><!-- 警告-->
                             </div>
-                            <div id="capsLocked" class="capsLock">键盘大写锁定已打开，请注意大小写!</div>
-                            <div class="pw-tips" id="pwd-safe" style="display:none;">
-                                <span class="txt">安全程度：</span>
-                                <div class="pw-safe pw-none">
-                                    <div class="pw-bar"></div>
-                                    <div class="pw-letter clearfix">
-                                        <span>弱</span>
-                                        <span>中</span>
-                                        <span>强</span>
-                                    </div>
-                                </div>
-                                <a class="pw-suggest" href="javascript:void(0);">密码设置建议</a>
-                            </div>
+                            <span id="passwordSuc" class="suc-icon" style="display: none;"></span>
+                            
 
                         </div>
 
@@ -114,6 +103,7 @@
                             <div class="msg-box" id="confirmPasswordMsgbox">
                                 <div class="msg-weak" id="confirmPasswordTips"></div>
                             </div>
+                            <span id="confirmPasswordSuc" class="suc-icon" style="display: none"></span>
                         </div>
 
 
@@ -123,87 +113,22 @@
                                 <label for="J_Mobile">手机号码：</label>
                             </span>
                             <input id="mobile" maxlength="11" onpaste="return false" name="mobile" tabindex="3" class="i-text" type="text" isClick="true"
-                                autocomplete="off" />
-                            <!-- <div class="rule-box" style="display:none;" id="checkMobileTipError">
+                                autocomplete="off" /> 
+                            <div class="rule-box err-tips" style="display:none;" id="checkMobileTipError">
                                 <span class="rule-box-text">手机号码格式有误，请重新输入</span>
                                 <span class="rule-box-pos"></span>
                             </div>
-                            <div class="rule-box" style="display:none;" id="checkMobileTipError2">
-                                <span class="rule-box-text">手机号已被激活过，请重新输入</span>
-                                <span class="rule-box-pos"></span>
-                            </div>
-                            <div class="rule-box" style="display:none;" id="checkMobileTipError3">
+
+                            <div class="rule-box err-tips" style="display:none;" id="checkMobileTipError3">
                                 <span class="rule-box-text">手机号不能为空</span>
                                 <span class="rule-box-pos"></span>
                             </div>
-                            <span id="checkMobileSucc" class="suc-icon" style="display: none;"></span> -->
 
 
-
-
-
-                            <div class="rule-box" style="display:none;" id="checkMobileTipError">
-                                <span class="rule-box-text">手机号码格式有误，请重新输入</span>
-                                <span class="rule-box-pos"></span>
-                            </div>
-                            <div class="rule-box" style="display:none;" id="checkMobileTipError2">
-                                <span class="rule-box-text">手机号已被激活过，请重新输入</span>
-                                <span class="rule-box-pos"></span>
-                            </div>
-                            <div class="rule-box" style="display:none;" id="checkMobileTipError3">
-                                <span class="rule-box-text">手机号不能为空</span>
-                                <span class="rule-box-pos"></span>
-                            </div>
                             <span id="checkMobileSucc" class="suc-icon" style="display: none;"></span>
                         </div>
 
 
-
-                        <div class="reg-items" id="sliderDiv" style="display: none">
-                            <span class="reg-label">
-                                <label>滑动验证：</label>
-                            </span>
-                            <div id="slider">
-                                <div id="slider_bg"></div>
-                                <span id="label">&gt;&gt;</span>
-                                <span id="labelTip">请按住滑块,拖动到最右边</span>
-                            </div>
-                            <div style="display: none;border: 1px solid #cc0000" class="check check-border">
-                                <a class="check-phone" href="javascript:void(0);" id="verifySliderTip" style="padding: 11px 10px 14px;color:#cc0000;">请拖动滑块，完成验证</a>
-                            </div>
-                        </div>
-
-
-                        <div class="reg-items" id="dingxiangDiv" style="display: none">
-                            <span class="reg-label">
-                                <label>滑动验证：</label>
-                            </span>
-                            <div id="c1" style="float:left;z-index:999;position:relative;">
-
-                            </div>
-                            <div style="display: none;border: 1px solid #cc0000;float:left;" class="check check-border">
-                                <a class="check-phone" href="javascript:void(0);" id="verifyDXTip" style="padding: 11px 10px 14px;color:#cc0000;">请拖动滑块，完成验证</a>
-                            </div>
-                        </div>
-
-
-                        <!-- 图片验证码 -->
-                        <div class="reg-items clearfix" style="padding-bottom:26px; position:relative; display:none" id="authenticCodeDiv">
-                            <span class="reg-label fl">
-                                <label for="J_Repwd">验证码：</label>
-                            </span>
-                            <input id="authenticCode" class="i-text i-short fl" type="text" style="position:relative;left:0" />
-                            <div class="check mr30 fl" style="position:relative;left:0">
-                                <label id="normal-register-captcha" class="codeimg captcha-container">
-                                    <img title="点击刷新" src="" id="codeRefreshControlCenter" onclick="changeImageAuthenticCode('codeRefreshControlCenter')" />
-                                    <span onclick="changeImageAuthenticCode('codeRefreshControlCenter')" class="refresh"></span>
-                                </label>
-                            </div>
-                            <div class="msg-box fl" id="authenticCodeMsgbox">
-                                <div class="msg-weak err-tips" id="authenticCodeTips"></div>
-                            </div>
-                            <!--  <span id="checkPicSucc" class="suc-icon suc-icon-little" style=""></span>-->
-                        </div>
 
 
                         <!-- 短信验证码 -->
@@ -221,55 +146,15 @@
                                 <a class="check-phone" style="display: none;padding:11px 10px 14px 10px" tabindex="6" id="resendSpan">重新获取验证码</a>
                             </div>
                             <div class="msg-box" id="verifyCodeMsgbox">
-                                <div class="msg-weak err-tips" id="verifyCodeTips"></div>
+                                <div class="msg-weak " id="verifyCodeTips"></div> <!--err-tips -->
                             </div>
                             <div style="display: none;" id="timeSpanMsbbox">
                                 <div class="msg-check">验证码已发送，请查收短信</div>
                             </div>
+                            <span id="yzm" class="suc-icon" style="display: none;"></span>
                         </div>
 
-
-
-                        <!-- 邮箱验证码 -->
-                        <div class="reg-items" id="verifyEmailCodeDiv" style="display: none;">
-                            <span class="reg-label">
-                                <label for="J_Repwd">邮箱验证码：</label>
-                            </span>
-                            <input id="verifyCodeEmail" maxlength="6" name="verifyCodeEmail" value="" tabindex="4" class="i-text i-short" type="text"
-                                style="position:relative;left:0" />
-                            <div class="check check-border" style="position:relative;left:0">
-                                <a class="check-phone" href="javascript:void(0);" id="getVerifyCodeEmail" style="padding:11px 10px 14px 10px;line-height:15px;*line-height:60px;">获取邮箱验证码</a>
-                                <span class="check-phone disable" style="display: none;" id="timeSpanEmail">
-                                    <em id="timeEmail">90</em>
-                                    秒后重新获取
-                                </span>
-                                <a class="check-phone" style="display: none;padding:11px 10px 14px 10px;line-height:15px;*line-height:60px;" tabindex="6"
-                                    id="resendSpanEmail">重新获取验证码</a>
-                            </div>
-                            <div class="msg-box" id="verifyCodeMsgboxEmail">
-                                <div class="msg-weak err-tips" id="verifyCodeEmailTips"></div>
-                            </div>
-                            <div style="display: none;" id="timeSpanMsbboxEmail">
-                                <div class="msg-check">邮箱验证码第
-                                    <em id="sendEmailTimes">*</em>次成功发送，请
-                                    <a href="javaScript:loginEmail();">登录邮箱</a>查收，8小时内有效</div>
-                            </div>
-                        </div>
-
-                        <!--推荐码-->
-                        <div class="reg-items" id="chooseNumDiv">
-                            <span class="reg-label">
-                                <label>推荐码
-                                    <i>(选填)</i>：</label>
-                            </span>
-                            <span class="default" id="chooseNumDefault">填写推荐人 推荐码 帮好友赚收入</span>
-                            <input id="chooseNum" name="refereeCode" maxlength="25" tabindex="1" class="i-text" autocomplete="off" type="text" verify="yes">
-                            <span id="chooseNumSucc" class="suc-icon" style="display: none;"></span>
-                            <div class="rule-box" style="display:none;" id="checkNum">
-                                <span class="rule-box-text">推荐码错误</span>
-                                <span class="rule-box-pos"></span>
-                            </div>
-                        </div>
+                       
 
 
                         <div class="reg-items-btn mt35 clearfix">

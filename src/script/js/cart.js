@@ -1,4 +1,4 @@
-!function($){
+!function ($) {
 
     // !function($){    //渲染购物车
     //     let id=$.cookie('sid');
@@ -13,7 +13,7 @@
     //                 car($arrayid,$arrnum[index]);
     //         })
     //     };
-    
+
     // function car(id,num){
     //     $.ajax({
     //         type: "POST",
@@ -172,7 +172,7 @@
 
 
 
-// 渲染购物车
+    // 渲染购物车
     if ($.cookie('sid') && $.cookie('num')) {
         let $arrsid = $.cookie('sid').split(',');//将获取的cookie转换成数组
         let $arrnum = $.cookie('num').split(',');
@@ -180,136 +180,177 @@
         //     showgoods(arrsid[i],arrnum[i]);
         // }
         $('.kong').hide();
-        $.each($arrsid,function(index,$arrayid){
+        $.each($arrsid, function (index, $arrayid) {
             // console.log(index);
             // console.log($arrayid);
-                car($arrsid[index],$arrnum[index]);
+            car($arrsid[index], $arrnum[index]);
         });
-        
+
     }
-    else{
+    else {
         // 购物车为空时
-         $('.cartlogin').css("display","none");
+        $('.cartlogin').css("display", "none");
         $('.exist').hide();
-   }
-
-function car(id,num){
-    $.ajax({
-		type: "POST",
-		url: "http://localhost/guomei/php/cart.php",
-		async: true,
-		dataType: 'json'
-	}).done(function (shoppingdata) {
-        // console.log(shoppingdata);
-        $.each(shoppingdata,function(index,value){
-            if(id==value.id){
-            let $clonecom=$('.commodity:hidden').clone(true,true);
-            $clonecom.find('.g-img').find('img').attr('src',value.href);
-            $clonecom.find('.cart-good-name').find('a').html(value.tradename);
-            $clonecom.find('.cart-good-real-price').html('¥&nbsp'+value.price);
-            $clonecom.find('.dytest ').val(num);
-            $clonecom.find('.commodity-total').html('¥&nbsp'+(value.price*num).toFixed(3));
-            $clonecom.css({display:'block'});
-        $('.carlist').append($clonecom);
-            }
-        });
-        
-    });
-    console.log(typeof $('.commodity'));
-    // $('.commodity').each(function(){
-        
-    // })
-    if(num>1){
-        $('.commodity').find('.gui-count-sub').removeClass("gui-count-disabled");
-
-    }else if(num<=1){
-        $('.commodity').find('.gui-count-sub').addClass("gui-count-disabled");
-        alert('a');
     }
-};
-   
+
+    function car(id, num) {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/guomei/php/cart.php",
+            async: true,
+            dataType: 'json'
+        }).done(function (shoppingdata) {
+            // console.log(shoppingdata);
+            $.each(shoppingdata, function (index, value) {
+                if (id == value.id) {
+                    let $clonecom = $('.commodity:hidden').clone(true, true);
+                    $clonecom.find('.g-img').find('img').attr({
+                        src: value.href,
+                        sid: value.id
+                    });
+                    $clonecom.find('.cart-good-name').find('a').html(value.tradename);
+                    $clonecom.find('.cart-good-real-price').find('span').append(value.price);
+                    $clonecom.find('.dytest ').val(num);
+                    $clonecom.find('.commodity-total').html('¥&nbsp' + (value.price * num).toFixed(2));
+                    $clonecom.css({ display: 'block' });
+                    $('.carlist').append($clonecom);
+                }
+            });
+
+        });
+        // console.log(typeof $('.commodity'));
+        // $('.commodity').each(function(){
+
+        // })
+        if (num > 1) {
+            $('.commodity').find('.gui-count-sub').removeClass("gui-count-disabled");
+
+        } else if (num<=1) {
+            $('.commodity').find('.gui-count-sub').addClass("gui-count-disabled");
+            // alert('a');
+        }
+    };
 
 
-dianji();
-function dianji(){
+
+    dianji();
+    function dianji() {
         // const $guicountsub=$('.carlist').find(".gui-count-sub");//减数量
         // const $guicountadd=$('.carlist').find(".gui-count-add");//加数量
         // const $dytest =$('.dytest ');//数量
-     
-        let $add=$('.commodity').find('.gui-count-add')//添加按钮
-        let $sub=$('.commodity').find('.gui-count-sub')//减少按钮
+        let $add = $('.commodity').find('.gui-count-add')//添加按钮
+        let $sub = $('.commodity').find('.gui-count-sub')//减少按钮
+        let $del = $('.delfixed').find('a')//减少按钮
+        // console.log($del);
         // console.log($sub);
-           // 加数量
+        // console.log($sub);
+
+
+        // 加数量
         // let num=0;
         // console.log($add);
-    //   console.log($add.size())  ;
-    let  num=null;
-
-          $add.on("click",function(){
-            // console.log($(this));
-            // let $input=$(this).parent('.gui-count').find('.gui-count-input');
-            // console.log($input);
-        //     num= $input.val();
-        // console.log($(this));
-        //     console.log($(this).next('.gui-count-input').find('.dytest ').val());
-          num=$(this).next('.gui-count-input').find('.dytest ').val();
-            num=Number(num)+1 ;
-            // if(num>1){
-            //     $(this).prev('.gui-count-sub').removeClass("gui-count-disabled");
-            // }
-        //    console.log(num);
-       
-        $(this).next('.gui-count-input').find('.dytest ').val(num);
-//       })
-          });
-        //   减少按钮
-                if(num>1){
-            // 显示减号按钮
-            let $guicountsubb=$input.siblings('.gui-count-sub');
-            // console.log($guicountsubb);
-            $guicountsubb.removeClass("gui-count-disabled"); 
+        //   console.log($add.size())  ;
+        let num = null;
+        $add.on("click", function () {
+            num = $(this).next('.gui-count-input').find('.dytest ').val();
+            num = Number(num) + 1;
+            if (num > 1) {
+                $(this).prev('.gui-count-sub').removeClass("gui-count-disabled");
             }
-            // console.log(num);
-            // $input.val(function(){
-            //     // console.log(++num);
-            // return num=Number(num)+1;
+            if(num==100){
+                num=99;
+            }
+            $(this).next('.gui-count-input').find('.dytest ').val(num);
+            setcook($(this));
+        });
+
+
+        //减少按钮
+        if (num > 1) {
+            // 显示减号按钮
+            let $guicountsubb = $input.siblings('.gui-count-sub');
+            // console.log($guicountsubb);
+            $guicountsubb.removeClass("gui-count-disabled");
+        }else if (num<=1) {
+            // $('.commodity').find('.gui-count-sub').addClass("gui-count-disabled");
+        }
+
+        // 减数量
+        $sub.on("click", function () {
+            num = $(this).parents('.cart-count').find('.gui-count-input').find('.dytest').val();
+            num = Number(num) - 1;
+            if(num==0){
+                num=1;
+               $(this).parents('.cart-count').find('.gui-count-sub').addClass("gui-count-disabled");
+            }
             
-        // }); 
-   
-}
-//     // // 减数量
-//     //     $jgACbtn.on("click",function(){
             
-//     //          if(num>1){
-//     //         $jgACvalinput.val(function(){
-//     //             return --num;
-//     //         });
-//     //     };
-//     //     if(num==1){
-//     //         // 关闭减号按钮
-//     //         $jgACbtn.addClass("disab"); 
-//     //     }
-//     //     });
-//     }
-    
+            $(this).parents('.cart-count').find('.gui-count-input').find('.dytest').val(num);
+            setcook($(this));
+            // if(num==1){
+            //     // 关闭减号按钮
+            //     $(this).prev('.gui-count-sub').addClass("gui-count-disabled");
+            // }
+        });
+
+
+        // 删除购物车
+        $del.on("click",function(){
+            let $imgid=$(this).parents('.cart-shop-good').find('.imgparent').find('img').attr('sid');
+            // console.log($(this).parents('.cart-shop-good').find('.imgparent').find('img').attr('sid'));
+            // console.log($imgid);
+            $(this).parents('.commodity').hide();
+            delcook($(this),$imgid);
+          
+        })
+
+    }
 
 
 
-// };
 
-// // function del(id,num){
-// //     let $arrnumm = $.cookie('num').split(',');
-// //     let $arrsidd = $.cookie('sid').split(',');
-// //     $('.deletee').on("click",function(){
-// //         $arrnumm[$arrsidd.indexOf(id)]=null;
-// //         $arrnumm.push( $arrnumm[$arrsidd.indexOf(id)]);
-		
-// // 			$.cookie('num', $arrnumm.toString(),{ expires: 7 });
-// //     //    console.log($arrnumm[$arrsidd.indexOf(id)]); 
-// //         //  $.cookie("num",num[$arrsidd.indexOf(id)],null);
-// //     })
-   
-// // }
 
-    
+    // 获取cookie
+    let $cookid = [];
+    let $cooknum = [];
+    function getcookie() {
+        if ($.cookie('sid') && $.cookie('num')) {
+            $cookid = $.cookie('sid').split(',');//将获取的cookie转换成数组
+            $cooknum = $.cookie('num').split(',');
+        }
+    }
+
+    // 添加到cookie
+    function setcook(obj) { //obj:当前操作的对象
+        getcookie();//得到数组
+        // console.log(obj);
+        let $objnum = obj.parents('.cart-count').find('.dytest ').val();//当前元素的数量
+        let $objid = obj.parents('.numparent').prev('.imgparent').find('img').attr('sid');//当前元素的id
+        // console.log($objid);
+        let $objpric = parseFloat(obj.parents('.butpratent').prev('.cart-price-height47').find('.cart-good-real-price ').find('span').html());
+        // console.log($objpric);
+        $cooknum[$.inArray($objid, $cookid)] = $objnum//$.inArray确定第一个参数在数组中的位置
+        // console.log($cooknum);
+        // console.log($cookid[$.inArray($objid,$cookid)])
+        // console.log($.inArray($objid,$cookid)+2);
+        $.cookie('num', $cooknum.toString(), { expires: 7 });
+        // 计算小计
+        $('.commodity-total').html('￥' + ($objnum * $objpric).toFixed(2));
+    }
+
+
+
+    // 删除cookie
+    function delcook(obj,sid){
+        getcookie();
+        // console.log($cookid);
+        // console.log($cooknum);
+        // $cookid[$.inArray(sid, $cookid)] =null;
+        // $cooknum[$.inArray(sid, $cookid)] =null;
+        $cookid.splice($.inArray(sid, $cookid), 1);//删除数组对应的值
+	    $cooknum.splice($.inArray(sid, $cookid), 1);//删除数组对应的值
+        // console.log($.inArray(sid, $cookid));
+        $.cookie('num', $cooknum.toString(), { expires: 7 });
+        $.cookie('sid', $cookid.toString(), { expires: 7 });
+    }
 }(jQuery)

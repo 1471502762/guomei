@@ -22,21 +22,34 @@
 	//lunbo数据
 	$.ajax({
 		type: "POST",
-		url: "http://localhost/guomei/php/index1.php",
+		url: "http://localhost/guomei/php/index2.php",
 		dataType:'json',
 	}).done(function (bannerdata) {
-				// console.log(bannerdata.lunbo);
+
+			
 				// 获取头部轮播数据
-				let $bann=bannerdata.lunbo;
-				headbann($bann);
+				headbann(bannerdata);
 
 				// 获取猜你喜欢数据
-				let $guess=bannerdata.guomei;
-				guesslike($guess);
+				// console.log(bannerdata);
+				// let $guess=bannerdata.guomei1;
+				// guesslike(bannerdata);
 
 			
 		});
+//猜你喜欢数据
+$.ajax({
+	type: "POST",
+	url: "http://localhost/guomei/php/index1.php",
+	dataType:'json',
+}).done(function (bannerdata) {
+			// 获取猜你喜欢数据
+			// console.log(bannerdata);
+			// let $guess=bannerdata.guomei1;
+			guesslike(bannerdata);
 
+		
+	});
 		// 渲染头部轮播
 		function headbann($bann){
 			let $largr_icon=$('.largr_icon');
@@ -61,12 +74,15 @@
 
 		// 渲染猜你喜欢
 		function guesslike($guess){
+			// console.log($guess.guomei1);
 			// console.log($guess);
 			let $jimgloadrecomm=$('#j-imgload-recomm');
-			let $like_commodity='';
-				$.each($guess,function(index,$elem){
-					// console.log($elem.tradename);
-					$like_commodity+=`
+			let $like_commodity1='';
+			let $like_commodity2='';
+			let $like_commodity3='';
+			// 1
+				$.each($guess.guomei1,function(index,$elem){
+					$like_commodity1+=`
 						<li maima_param="undefined" productid="A0006519174" style="block">
 							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="details.html?sid=${$elem.id}">
 								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.href}"
@@ -78,18 +94,74 @@
 						</li>
 						
 					`;
-					if(index>=0&&index<6){
-					$('.ul1').html($like_commodity);
-					index=6;	
-					}else if(index>=6&&index<12){
-					$('.ul2').html($like_commodity);
-					index=12;
-					}else if(index>=12&&index<17){
-					$('.ul3').html($like_commodity);
-					}
+					
+					// if(index>=0&&index<6){
+					// $('.ul1').html($like_commodity);
+					// index=6;	
+					// }else if(index>=6&&index<12){
+					// $('.ul2').html($like_commodity);
+					// index=12;
+					// }else if(index>=12&&index<17){
+					// $('.ul3').html($like_commodity);
+					// }
+				});
+
+				$jimgloadrecomm.find('.ul1').html($like_commodity1);
+				// 2
+				$.each($guess.guomei2,function(index,$elem){
+					$like_commodity2+=`
+						<li maima_param="undefined" productid="A0006519174" style="block">
+							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="details.html?sid=${$elem.id}">
+								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.href}"
+								 data-lazy-init="//gfs17.gomein.net.cn/T1W5WsBTdT1RCvBVdK_120.jpg" data-lazy-img="done">
+								<p class="guess_title">"${$elem.tradename}"</p>
+								<p class="guess_price">
+									<span class="yuan">¥</span>"${$elem.price}"</p>
+							</a>
+						</li>
+						
+					`;
+					
+					// if(index>=0&&index<6){
+					// $('.ul1').html($like_commodity);
+					// index=6;	
+					// }else if(index>=6&&index<12){
+					// $('.ul2').html($like_commodity);
+					// index=12;
+					// }else if(index>=12&&index<17){
+					// $('.ul3').html($like_commodity);
+					// }
+				});
+				$jimgloadrecomm.find('.ul2').html($like_commodity2);
+				//3
+				$.each($guess.guomei2,function(index,$elem){
+					$like_commodity3+=`
+						<li maima_param="undefined" productid="A0006519174" style="block">
+							<a rel="nofollow" target="_blank" title="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" href="details.html?sid=${$elem.id}">
+								<img width="120" height="120" alt="Haier海尔 BC-50ES mini冰箱 单门冷藏柜 家用 小型 宿舍 50升(白色 150升以下)" src="${$elem.href}"
+								 data-lazy-init="//gfs17.gomein.net.cn/T1W5WsBTdT1RCvBVdK_120.jpg" data-lazy-img="done">
+								<p class="guess_title">"${$elem.tradename}"</p>
+								<p class="guess_price">
+									<span class="yuan">¥</span>"${$elem.price}"</p>
+							</a>
+						</li>
+						
+					`;
+					
+					// if(index>=0&&index<6){
+					// $('.ul1').html($like_commodity);
+					// index=6;	
+					// }else if(index>=6&&index<12){
+					// $('.ul2').html($like_commodity);
+					// index=12;
+					// }else if(index>=12&&index<17){
+					// $('.ul3').html($like_commodity);
+					// }
 				});
 			// $like_commodity+='</ul>';
 			// $jimgloadrecomm.html($like_commodity);
+		
+			$jimgloadrecomm.find('.ul3').html($like_commodity3);
 		}
 		
 
@@ -321,7 +393,7 @@
 
 
 
-//每日必抢 轮播效果
+//每日必抢 猜你喜欢 轮播效果
 !function ($) {
 	$.fn.extend({
 		smalllunbo:function(option){
