@@ -8,7 +8,7 @@ var $tablebody=$('#table1 tbody');
 
 $btn.on('click',function(){
 	$.ajax({
-		url:'http://10.31.165.15/js1803/jingdong/php/add.php',
+		url:'http://10.31.158.35/js1803/jingdong/php/add.php',
 		data:{
 			content:$content.val(),
 			where:$where.val(),

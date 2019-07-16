@@ -5,7 +5,7 @@
 	//渲染
 	$.ajax({
 		type: "POST",
-		url: "http://localhost/guomei/php/details.php",
+		url: "http://10.31.158.35/guomei/php/details.php",
 		async: true,
 		dataType: 'json',
 		data: {

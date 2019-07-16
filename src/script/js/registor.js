@@ -15,6 +15,7 @@
     let $pwd= '';//接收表单的value值
     const $pas=/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/;//密码
     const $confirmPasswordTips=$('#confirmPasswordTips');
+    let flash=false;
 // 用户名
     // 鼠标点击
     $items1.on("focus", function () {
@@ -30,28 +31,32 @@
             if ($usernamenum.test($usname)) {// 全是数字
                 $msgconttishsi.html('不能是纯数字，请重新输入');
                 $nameTips.show();
+                flash=false;
             } else if ($username.test($usname)) {//输入正确
+                flash=true;
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/guomei/php/registor.php",
+                    url: "http://10.31.158.35/guomei/php/registor.php",
                     data: {
                         $name: $usname,
                     },
                     success: function (name) {
-                        if (!name) {//数据库中已存在
+                        if (!name) {
                             $nameSuc.show();
-                        } else {//数据库中不存在
+                        } else {
                             $msgconttishsi.html('该用户名已存在，立刻登录或更换用户名');
                             $nameTips.show();
                         }
                     }
                 });
             } else {//其他情况
-                console.log($items1.val());
+                flash=false;
+                // console.log($items1.val());
                 $msgconttishsi.html('用户名长度只能在4-20个字符之间');
                 $nameTips.show();
             }
         } else if ($usname == '') {//为空时
+            flash=false;
             $nameTips.show();
             $msgconttishsi.html('请输入用户名');
         }
@@ -68,17 +73,21 @@ $password.on("blur", function () {
     $pwd=$password.val();
     if($pwd!=''){
         if($pas.test($pwd)){
+            flash=true;
             $passwordTips.hide();
             $('#passwordSuc').show();
             $("#confirmPassword").removeAttr('disabled');
         }else if($usernamenum.test($pwd)||$pwdzimu.test($pwd)){
+            flash=false;
             $passwordMsgbox.addClass('err-tips');
             $passwordTips.html("不能为同一字符");
         }else{
+            flash=false;
             $passwordMsgbox.addClass('err-tips');
             $passwordTips.html("长度应为6-20个字符");
         }
     }else {
+        flash=false;
         $passwordMsgbox.addClass('err-tips');
         $passwordTips.html("请输入密码");
     }
@@ -95,12 +104,15 @@ $("#confirmPassword").on("blur", function () {
         if($('#confirmPassword').val()==$password.val()){
                 $('#confirmPasswordSuc').show();
                 $confirmPasswordTips.hide();
+                flash=true;
             }
             else{
+                flash=false;
                 $('#confirmPasswordMsgbox').addClass('err-tips');
                 $confirmPasswordTips.html('两次密码不一致');
             }
     }else{
+        flash=false;
         $('#confirmPasswordMsgbox').addClass('err-tips');
         $confirmPasswordTips.html('请输入密码');
     }
@@ -123,11 +135,14 @@ $mobile.on("blur",function(){
         $('#checkMobileTipError').hide();
         if($tel.test($mobile.val())){
             $('#checkMobileSucc').show();
+            flash=true;
             }
             else{
+                flash=false;
                 $('#checkMobileTipError').show();
             }
     }else{
+        flash=false;
         $('#checkMobileTipError3').show();
         $('#checkMobileTipError').hide();
         // $('#checkMobileTipError3').html('')
@@ -150,18 +165,29 @@ $verifyCode.on("blur",function(){
         if($yzm.test($verifyCode.val())){
             $('#verifyCodeTips').hide();
             $('#yzm').show();
+            flash=true;
         }else{
+            flash=false;
             $('#verifyCodeTips').show();
             $('#verifyCodeTips').addClass('err-tips');
             $('#verifyCodeTips').html('请输入正确验证码');
         }
 
     }else{
+        flash=false;
         $('#verifyCodeTips').addClass('err-tips');
         $('#verifyCodeTips').html('请输入验证码');
     }
     
+});
+
+
+$('#registerNow').on("click",function(){
+    if(!flash){
+                return false;
+    }
 })
+
 
 
     // 弹窗

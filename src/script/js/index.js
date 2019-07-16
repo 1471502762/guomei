@@ -1,4 +1,24 @@
 ; !function ($) {
+
+	teb();
+	function teb(){
+		let $floors=$('#mcs .main_warp .main');
+		// console.log($floors);
+		$('.cellphone').each(function(index,ele){
+			$(ele).on("mouseover",function(){
+				$(this).css("background","#719ef7").siblings().css("background","#fff");
+				$(this).addClass('cur').siblings().removeClass('cur');
+
+				$floors.eq(index).show().siblings().hide();
+				// console.log(index);
+				// console.log($('#floors').length)
+				// console.log($('#floors').eq(index))
+			})
+		})
+	}
+
+
+
 	//banner数据
 	// $.ajax({
 	// 	url: 'p',
@@ -22,7 +42,7 @@
 	//lunbo数据
 	$.ajax({
 		type: "POST",
-		url: "http://localhost/guomei/php/index2.php",
+		url: "http://10.31.158.35/guomei/php/index2.php",
 		dataType:'json',
 	}).done(function (bannerdata) {
 
@@ -40,7 +60,7 @@
 //猜你喜欢数据
 $.ajax({
 	type: "POST",
-	url: "http://localhost/guomei/php/index1.php",
+	url: "http://10.31.158.35/guomei/php/index1.php",
 	dataType:'json',
 }).done(function (bannerdata) {
 			// 获取猜你喜欢数据
@@ -341,9 +361,7 @@ $.ajax({
 		if ($(window).scrollTop() >= 1400 && $(window).scrollTop() <= $heightall - 1000) {
 			$elevator.show();
 		} else {
-			setTimeout(function () {
 				$elevator.hide();
-			}, 500)
 		};
 
 		// 滚动条事件   楼层变化楼梯跟着变化
@@ -530,8 +548,15 @@ $.ajax({
 				}
 			})
 		}
-	})
+	});
+
+
+
+
 }(jQuery);
+
+
+
 
 
 // !function ($) {

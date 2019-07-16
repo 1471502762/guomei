@@ -9,4 +9,19 @@ if(isset($_POST['$name'])){
         echo false;
     }
 
+};
+
+
+
+
+
+if(isset($_POST['submit'])){
+    $name=$_POST['login'];
+    $password=$_POST['password'];
+    $confirmPassword=$_POST['confirmPassword'];
+    $mobile=$_POST['mobile'];
+    $verifyCode=$_POST['verifyCode'];
+    $conn->query("insert user values(null,'$name','$password','$confirmPassword','$mobile','$verifyCode')");
+    header('location:http://10.31.158.35/guomei/src/login.html');
+
 }

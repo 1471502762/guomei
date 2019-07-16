@@ -61,7 +61,7 @@
 							 <a href="javascript:;" class="clear-btn"></a>
 							
 							<span class="default" id="loginPasswordDefault">密码</span>
-							<input id="loginPassword" tabindex="2" type="password" class="txt" value="" autocomplete="off"  onkeypress="javascript:detectCapsLock(event);handleFocus('loginPassword');if(event.keyCode==13 && isSubmit){loginGome(preLogin);return false;}"/>
+							<input id="loginPassword" tabindex="2" type="password" class="txt" value="" autocomplete="off"/>
 							<input type="password" name="password" value="" style="display: none;">
 							<input type="publicKey" name="publicKey" value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4n52aA0WeKjEVQM5Qaqu6+OZB5OU1KCcrnjAOEdAy7nCHIaDDGyukWGnpuqO8oBg/pJkx95UCur7R8KfANPIZ/sXCIfaS6bDNP78IGkzzVYAMcSbEWbjeJOlS1uo/xUtxMp4wwKUo19Q5A+BJJfvx+pilhRT+IgW+C5rfhNeGQQIDAQAB" style="display: none;">
 							<input type="passwordNum" name="passwordNum" value="" style="display: none;">
@@ -102,7 +102,7 @@
 							<input name="login" type="hidden" value="登录" id="loginButton" />	
 							<input  type="hidden" value="0" id="loginErrorNum" />
 							<!-- <input type="submit" class="btnnuw" value="登录"/> -->
-							<input type="button" tabindex="5" value="登 录" class="btnnuw" onclick="loginGome(preLogin);return false;" />            
+							<input type="button" tabindex="5" value="登 录" id="log" class="btnnuw"/>            
 						</div>
 						  
 							<p style="padding: 30px 0 15px;">
@@ -231,5 +231,7 @@
     </div>
 </div>
 
+<script src="script/thirdplugins/jquery.min.js"></script>
+<script src="script/js/login.js"></script>
 </body>
 </html>

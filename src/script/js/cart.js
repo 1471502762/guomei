@@ -196,7 +196,7 @@
     function car(id, num) {
         $.ajax({
             type: "POST",
-            url: "http://localhost/guomei/php/cart.php",
+            url: "http://10.31.158.35/guomei/php/cart.php",
             async: true,
             dataType: 'json'
         }).done(function (shoppingdata) {
