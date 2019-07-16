@@ -11,10 +11,6 @@ if(isset($_POST['$name'])){
 
 };
 
-
-
-
-
 if(isset($_POST['submit'])){
     $name=$_POST['login'];
     $password=$_POST['password'];
