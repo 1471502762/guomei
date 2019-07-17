@@ -12,7 +12,7 @@
             }
         }).done(function (date) {
             if(date){
-                location.href='index1.html';
+                location.href='index.html';
             }else{
                 $('#warmTips').find('span').html('用户名或者密码错误');
                 $('#warmTips').show();
